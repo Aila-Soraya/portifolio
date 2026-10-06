@@ -11,8 +11,10 @@
     --branco: #f4f5f3;
     --agua: #5faaa8;
     --agua-claro: #83c4c1;
-    --fonte-titulo: 'Arial Black', 'Impact', sans-serif;
-    --fonte-texto: 'Arial', 'Helvetica', sans-serif;
+
+    --fonte-titulo: 'Bebas Neue', sans-serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+
     --transicao: 0.35s ease;
 }
 
