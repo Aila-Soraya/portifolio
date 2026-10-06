@@ -6,12 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
 
-  <!-- FONTES CINEMATOGRÁFICAS -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- REGRAS DE DESIGN INTEGRADAS VISÍVEIS -->
+  <!-- REGRAS DE DESIGN INTEGRADAS - ZERO LINKS EXTERNOS PARA NÃO TRAVAR O SITE -->
   <style>
     :root {
         --preto: #111111;
@@ -22,8 +17,8 @@
         --branco: #f4f5f3;
         --agua: #5faaa8;
         --agua-claro: #83c4c1;
-        --fonte-titulo: 'Bebas Neue', sans-serif;
-        --fonte-texto: 'Montserrat', sans-serif;
+        --fonte-titulo: 'Impact', 'Arial Black', sans-serif;
+        --fonte-texto: 'Helvetica Neue', 'Arial', sans-serif;
         --transicao: 0.35s ease;
     }
 
@@ -36,10 +31,10 @@
     /* MENU NAVEGAÇÃO FIXED */
     header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 24px 6%; background: rgba(17, 17, 17, 0.95) !important; border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important; }
     nav { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; width: 100%; }
-    .logo { font-family: var(--fonte-titulo); font-size: 30px; letter-spacing: 2px; color: #ffffff !important; }
+    .logo { font-family: var(--fonte-titulo); font-size: 30px; letter-spacing: 2px; color: #ffffff !important; text-transform: uppercase; }
     .logo span { color: var(--agua) !important; }
     .nav-links { display: flex; align-items: center; gap: 35px; list-style: none; }
-    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cinza-claro) !important; transition: color var(--transicao); }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cinza-claro) !important; transition: color var(--transicao); }
     .nav-links a:hover { color: var(--agua-claro) !important; }
 
     main { padding-top: 80px; display: block; }
@@ -48,13 +43,13 @@
     section { padding: 120px 6%; background: #111111 !important; display: block !important; }
     .section-container { max-width: 1400px; margin: auto; }
     .section-label { color: var(--agua) !important; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
-    .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; color: #ffffff !important; }
+    .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; color: #ffffff !important; text-transform: uppercase; }
 
     /* QUEM SOU (BIOGRAFIA LADO A LADO NO PC) */
     .about { background: var(--preto-suave) !important; }
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-    .about-text h1 { font-family: var(--fonte-titulo); font-size: clamp(55px, 8vw, 110px); font-weight: 400; line-height: 0.9; margin-bottom: 10px; color: #ffffff !important; }
-    .subtitle { color: var(--agua-claro) !important; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; font-weight: 500; }
+    .about-text h1 { font-family: var(--fonte-titulo); font-size: clamp(55px, 8vw, 110px); font-weight: 400; line-height: 0.9; margin-bottom: 10px; color: #ffffff !important; text-transform: uppercase; letter-spacing: 1px; }
+    .subtitle { color: var(--agua-claro) !important; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; font-weight: 600; }
     .description { color: var(--cinza-claro) !important; font-size: 16px; line-height: 1.9; font-weight: 300; text-align: justify; }
     .about-image img { width: 100%; max-width: 440px; border-radius: 4px; display: block; margin: 0 auto; filter: grayscale(15%); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 
@@ -77,7 +72,7 @@
     /* TEXTOS INTERNOS DOS CARDS */
     .project-info { padding-top: 5px; text-align: center; }
     .project-category { color: var(--agua) !important; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .project-title { font-family: var(--fonte-titulo); font-size: 26px; font-weight: 400; letter-spacing: 1px; color: #ffffff !important; margin-bottom: 12px; }
+    .project-title { font-family: var(--fonte-titulo); font-size: 26px; font-weight: 400; letter-spacing: 1px; color: #ffffff !important; margin-bottom: 12px; text-transform: uppercase; }
     .expertise-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 15px; }
     .tag { background: #111111 !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; padding: 4px 10px; font-size: 10px; color: var(--cinza-claro) !important; border-radius: 3px; font-weight: 500; }
     .project-description { color: var(--cinza) !important; font-size: 13px; line-height: 1.6; text-align: center; }
@@ -92,7 +87,7 @@
     /* CONTATO */
     .contact { min-height: 60vh; display: flex !important; align-items: center !important; background: linear-gradient(135deg, var(--preto-suave), #111111) !important; }
     .contact-content { width: 100%; max-width: 1400px; margin: auto; text-align: left; }
-    .contact-title { font-family: var(--fonte-titulo); font-size: clamp(55px, 9vw, 120px); line-height: 0.85; font-weight: 400; color: #ffffff !important; }
+    .contact-title { font-family: var(--fonte-titulo); font-size: clamp(55px, 9vw, 120px); line-height: 0.85; font-weight: 400; color: #ffffff !important; text-transform: uppercase; }
     .contact-title span { color: var(--agua) !important; }
     .contact-text { max-width: 500px; margin-top: 25px; color: var(--cinza-claro) !important; font-size: 15px; line-height: 1.8; }
     .contact-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 35px; }
@@ -124,6 +119,9 @@
   <!-- MENU -->
   <header>
     <nav>
-      <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
+      <a href="#inicio" class="logo">AÍLA <span>SURAYA</span></a>
       <div class="nav-links">
         <a href="#inicio">Quem Sou</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#softwares">Softwares</a>
+        <a href="#contato">Contato</a>
