@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
 
   <!-- FONTES CINEMATOGRÁFICAS -->
@@ -12,7 +11,7 @@
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- REGRAS DE DESIGN INTEGRADAS - ZERO DEPENDÊNCIAS DE PASTA EXTERNA -->
+  <!-- REGRAS DE DESIGN INTEGRADAS - SEM LINKS QUEBRADOS DE FORA -->
   <style>
     :root {
         --preto: #111111;
@@ -43,37 +42,32 @@
     .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cinza-claro) !important; transition: color var(--transicao); }
     .nav-links a:hover { color: var(--agua-claro) !important; }
 
-    main { padding-top: 100px; }
+    main { padding-top: 80px; }
 
     /* SEÇÕES E CONTAINER BASE */
-    section { padding: 100px 6%; background: var(--preto) !important; opacity: 1 !important; visibility: visible !important; display: block !important; }
+    section { padding: 120px 6%; background: var(--preto) !important; display: block !important; }
     .section-container { max-width: 1400px; margin: auto; }
     .section-label { color: var(--agua) !important; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
     .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; color: #ffffff !important; }
 
-    /* TRAVA DE SEGURANÇA PARA AS CLASSES DE ANIMAÇÃO ORIGINAIS */
-    .reveal, .animar-entrada { opacity: 1 !important; visibility: visible !important; transform: none !important; transition: none !important; }
-
     /* QUEM SOU (BIOGRAFIA LADO A LADO NO PC) */
-    .about { background: var(--preto-suave) !important; padding: 120px 6%; }
+    .about { background: var(--preto-suave) !important; }
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
     .about-text h1 { font-family: var(--fonte-titulo); font-size: clamp(55px, 8vw, 110px); font-weight: 400; line-height: 0.9; margin-bottom: 10px; color: #ffffff !important; }
     .subtitle { color: var(--agua-claro) !important; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; font-weight: 500; }
     .description { color: var(--cinza-claro) !important; font-size: 16px; line-height: 1.9; font-weight: 300; text-align: justify; }
     .about-image img { width: 100%; max-width: 440px; border-radius: 4px; display: block; margin: 0 auto; filter: grayscale(15%); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
-    .about-image:hover img { filter: grayscale(0%); }
 
     /* GRID DO PORTFÓLIO EM 3 COLUNAS COORDENADAS (PC) */
-    .portfolio { background: var(--preto) !important; }
     .portfolio-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; width: 100% !important; align-items: stretch !important; margin-top: 40px; }
     .project { display: flex !important; flex-direction: column !important; background: var(--preto-suave) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important; border-radius: 8px !important; padding: 30px 24px !important; text-align: center !important; box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; height: 100% !important; }
 
     .project-video, .project-media { position: relative; width: 100% !important; aspect-ratio: 16 / 9 !important; overflow: hidden !important; background: var(--cinza-escuro) !important; border-radius: 6px !important; margin-bottom: 25px !important; }
     .project-video video, .project-video img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
-    #videoCard { cursor: pointer; transition: transform 0.3s ease; }
-    #videoCard:hover { transform: scale(1.02); }
+    .video-clicavel { cursor: pointer; transition: transform 0.3s ease; }
+    .video-clicavel:hover { transform: scale(1.02); }
 
-    /* CAPAS COM DESFOQUE BLUR CINEMATOGRÁFICO */
+    /* CAPAS COM DESFOQUE BLUR CINEMATOGRÁFICO DE 18PX */
     .window-placeholder { background: #151616 !important; display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid rgba(255,255,255,0.05) !important; position: relative; }
     .bg-blur { width: 100% !important; height: 100% !important; object-fit: cover !important; filter: blur(18px) brightness(0.3) !important; opacity: 0.5 !important; position: absolute !important; inset: 0 !important; z-index: 1 !important; }
     .status-overlay { position: relative !important; z-index: 2 !important; text-align: center !important; padding: 20px; width: 100% !important; }
@@ -105,7 +99,7 @@
     .contact-links a { padding: 13px 24px; border: 1px solid var(--agua) !important; color: var(--agua-claro) !important; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: background var(--transicao), color var(--transicao); }
     .contact-links a:hover { background: var(--agua) !important; color: var(--preto) !important; }
 
-    /* FOOTER & OVERLAY */
+    /* FOOTER & OVERLAY LIGHTBOX */
     footer { padding: 40px 6%; background: #0d0e0e !important; border-top: 1px solid rgba(255, 255, 255, 0.06) !important; }
     .footer-content { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; color: var(--cinza) !important; font-size: 11px; letter-spacing: 1px; }
 
@@ -119,3 +113,16 @@
         header { padding: 20px 5%; }
         .nav-links { display: none; }
         section { padding: 90px 5%; }
+        .about-grid, .portfolio-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        .footer-content { flex-direction: column; gap: 12px; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <header>
+    <nav>
+      <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
+      <div class="nav-links">
