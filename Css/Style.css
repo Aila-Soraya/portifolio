@@ -46,7 +46,7 @@ section { padding: 120px 6%; background: var(--preto); }
 .section-label { color: var(--agua); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
 .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; }
 
-/* SOBRE (ALINHADO PERFEITAMENTE LADO A LADO COMO NO SEU DESIGN ORIGINAL) */
+/* SOBRE (QUEM SOU EU) */
 .about { background: var(--preto-suave); }
 .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
 .about-text h1 { font-family: var(--fonte-titulo); font-size: clamp(55px, 8vw, 110px); font-weight: 400; line-height: 0.9; margin-bottom: 10px; }
@@ -80,7 +80,7 @@ section { padding: 120px 6%; background: var(--preto); }
 .tag { background: var(--preto); border: 1px solid rgba(255, 255, 255, 0.08); padding: 4px 10px; font-size: 10px; color: var(--cinza-claro); border-radius: 3px; font-weight: 500; }
 .project-description { color: var(--cinza); font-size: 13px; line-height: 1.6; text-align: center; }
 
-/* CATEGORIAS / PROCESSO SEÇÃO SOFTWARES */
+/* FERRAMENTAS E ECOSSISTEMA */
 .work-process { background: var(--preto-suave); }
 .softwares-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 20px; }
 .software-item { background: var(--preto); border: 1px solid rgba(255, 255, 255, 0.06); padding: 24px; text-align: center; border-radius: 4px; transition: var(--transicao); }
@@ -101,16 +101,16 @@ section { padding: 120px 6%; background: var(--preto); }
 footer { padding: 40px 6%; background: #0d0e0e; border-top: 1px solid rgba(255, 255, 255, 0.06); }
 .footer-content { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; color: var(--cinza); font-size: 11px; letter-spacing: 1px; }
 
-/* MODAL EXPANDIDO LIGHTBOX DO VÍDEO GIGANTE */
+/* LIGHTBOX DO PLAYER EXPANDIDO */
 .video-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.96); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
 .video-modal-container { width: 90%; max-width: 1100px; aspect-ratio: 16 / 9; position: relative; }
 .video-modal-container video { width: 100%; height: 100%; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
 .btn-fechar-modal { position: absolute; top: -45px; right: 0; background: none; border: none; color: #ffffff; font-size: 35px; cursor: pointer; }
 
-/* GRANULAÇÃO DE CINEMA ANALÓGICO ORIGINAL */
+/* GRANULAÇÃO DE CINEMA ANALÓGICO */
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 9999; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://w3.org id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
 
-/* RESPONSIVIDADE ORIGINAL TOTALMENTE PRESERVADA */
+/* RESPONSIVIDADE EM CELULARES */
 @media (max-width: 900px) {
     header { padding: 20px 5%; }
     .nav-links { display: none; }
