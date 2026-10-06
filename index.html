@@ -3,258 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #111111; color: #f2f0ec; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    header { position: fixed; top: 0; left: 0; width: 100%; padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(17, 17, 17, 0.88); backdrop-filter: blur(10px); }
+    .logo { font-size: 18px; font-weight: 600; letter-spacing: 1px; }
+    nav { display: flex; gap: 30px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+    nav a { opacity: 0.7; transition: 0.3s; }
+    nav a:hover { opacity: 1; }
+    .hero { min-height: 100vh; padding: 150px 5% 80px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-title { margin-bottom: 50px; }
+    .hero-title h1 { font-size: clamp(55px, 10vw, 150px); font-weight: 400; line-height: 0.9; letter-spacing: -5px; }
+    .hero-title p { margin-top: 25px; font-size: 17px; letter-spacing: 4px; text-transform: uppercase; color: #b7b2aa; }
+    .main-video { width: 100%; aspect-ratio: 16 / 9; background: #242424; overflow: hidden; position: relative; }
+    .main-video video { width: 100%; height: 100%; object-fit: cover; }
+    section { padding: 120px 5%; }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 50px; border-bottom: 1px solid #333; padding-bottom: 18px; }
+    .section-header h2 { font-size: 38px; font-weight: 400; }
+    .section-number { color: #777; font-size: 13px; }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 70px 30px; }
+    .project { cursor: pointer; }
+    .project-video { aspect-ratio: 16 / 9; background: #242424; overflow: hidden; margin-bottom: 18px; }
+    .project-video video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .project:hover video { transform: scale(1.03); }
+    .project h3 { font-size: 22px; font-weight: 400; margin-bottom: 5px; }
+    .project p { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; max-width: 900px; }
+    .skill { border: 1px solid #3a3a3a; padding: 12px 18px; font-size: 14px; color: #c4c0ba; }
+    .about { max-width: 850px; }
+    .about p { font-size: clamp(24px, 3vw, 40px); line-height: 1.25; font-weight: 300; }
+    .contact { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; }
+    .contact h2 { font-size: clamp(50px, 8vw, 110px); font-weight: 400; line-height: 0.95; margin-bottom: 50px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 30px; }
+    .contact-links a { border-bottom: 1px solid #555; padding-bottom: 5px; font-size: 15px; transition: 0.3s; }
+    .contact-links a:hover { border-color: #f2f0ec; }
+    footer { padding: 40px 5%; border-top: 1px solid #222; font-size: 13px; color: #666; display: flex; justify-content: space-between; }
+    @media (max-width: 768px) { .projects { grid-template-columns: 1fr; } header { padding: 20px 5%; } nav { display: none; } }
+  </style>
+</head>
+<body>
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <header>
+    <div class="logo">AÍLA SORAYA</div>
+    <nav>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    body {
-      background: #111111;
-      color: #f2f0ec;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.5;
-    }
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-title">
+        <h1>Videomaker &<br>Filmmaker</h1>
+        <p>Portfólio de Direção, Filmagem e Edição</p>
+      </div>
+      
+      <div class="main-video">
+        <!-- Substitua 'seu-video-principal.mp4' pelo nome exato do seu vídeo destaque dentro da pasta Vídeos -->
+        <video autoplay muted loop playsinline src="Vídeos/seu-video-principal.mp4"></video>
+      </div>
+    </section>
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    <!-- PROJETOS -->
+    <section id="projetos">
+      <div class="section-header">
+        <h2>Projetos Selecionados</h2>
+        <span class="section-number">01</span>
+      </div>
+      
+      <div class="projects">
+        <div class="project">
+          <div class="project-video">
+            <!-- Substitua pelo nome real do seu vídeo de projeto na pasta Vídeos -->
+            <video muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()" src="Vídeos/projeto1.mp4"></video>
+          </div>
+          <h3>Nome do Projeto 1</h3>
+          <p>Direção / Edição</p>
+        </div>
 
-    /* MENU */
+        <div class="project">
+          <div class="project-video">
+            <!-- Substitua pelo nome real do seu vídeo de projeto na pasta Vídeos -->
+            <video muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()" src="Vídeos/projeto2.mp4"></video>
+          </div>
+          <h3>Nome do Projeto 2</h3>
+          <p>Videoclipe / Cor</p>
+        </div>
+      </div>
+    </section>
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 24px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background: rgba(17, 17, 17, 0.88);
-      backdrop-filter: blur(10px);
-    }
+    <!-- COMPETÊNCIAS -->
+    <section>
+      <div class="section-header">
+        <h2>Competências</h2>
+        <span class="section-number">02</span>
+      </div>
+      <div class="skills">
+        <div class="skill">Direção de Fotografia</div>
+        <div class="skill">Edição & Color Grading</div>
+        <div class="skill">Roteiro</div>
+        <div class="skill">Produção Audiovisual</div>
+        <div class="skill">Adobe Premiere / After Effects</div>
+      </div>
+    </section>
 
-    .logo {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="section-header">
+        <h2>Sobre</h2>
+        <span class="section-number">03</span>
+      </div>
+      <div class="about">
+        <p>Conto histórias através de imagens em movimento. Especialista em capturar a essência de marcas, eventos e narrativas cinematográficas com um olhar minimalista e expressivo.</p>
+      </div>
+    </section>
 
-    nav {
-      display: flex;
-      gap: 30px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    <!-- CONTATO -->
+    <section id="contato" class="contact">
+      <h2>Vamos criar<br>algo juntos?</h2>
+      <div class="contact-links">
+        <a href="mailto:seu-email@gmail.com">E-mail</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://wa.me" target="_blank">WhatsApp</a>
+      </div>
+    </section>
+  </main>
 
-    nav a {
-      opacity: 0.7;
-      transition: 0.3s;
-    }
+  <footer>
+    <p>© Aíla Soraya. Todos os direitos reservados.</p>
+    <p>2026</p>
+  </footer>
 
-    nav a:hover {
-      opacity: 1;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      padding: 150px 5% 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-title {
-      margin-bottom: 50px;
-    }
-
-    .hero-title h1 {
-      font-size: clamp(55px, 10vw, 150px);
-      font-weight: 400;
-      line-height: 0.9;
-      letter-spacing: -5px;
-    }
-
-    .hero-title p {
-      margin-top: 25px;
-      font-size: 17px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #b7b2aa;
-    }
-
-    /* VIDEO PRINCIPAL */
-
-    .main-video {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #242424;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .main-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .video-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #777;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* SEÇÕES */
-
-    section {
-      padding: 120px 5%;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 50px;
-      border-bottom: 1px solid #333;
-      padding-bottom: 18px;
-    }
-
-    .section-header h2 {
-      font-size: 38px;
-      font-weight: 400;
-    }
-
-    .section-number {
-      color: #777;
-      font-size: 13px;
-    }
-
-    /* PROJETOS */
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 70px 30px;
-    }
-
-    .project {
-      cursor: pointer;
-    }
-
-    .project-video {
-      aspect-ratio: 16 / 9;
-      background: #242424;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .project-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .project:hover video {
-      transform: scale(1.03);
-    }
-
-    .project-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    .project h3 {
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 5px;
-    }
-
-    .project p {
-      font-size: 13px;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* COMPETÊNCIAS */
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 900px;
-    }
-
-    .skill {
-      border: 1px solid #3a3a3a;
-      padding: 12px 18px;
-      font-size: 14px;
-      color: #c4c0ba;
-    }
-
-    /* SOBRE */
-
-    .about {
-      max-width: 850px;
-    }
-
-    .about p {
-      font-size: clamp(24px, 3vw, 40px);
-      line-height: 1.25;
-      font-weight: 300;
-    }
-
-    /* CONTATO */
-
-    .contact {
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .contact h2 {
-      font-size: clamp(50px, 8vw, 110px);
-      font-weight: 400;
-      line-height: 0.95;
-      margin-bottom: 50px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .contact-links a {
-      border-bottom: 1px solid #555;
-      padding-bottom: 5px;
-      font-size: 15
+</body>
+</html>
