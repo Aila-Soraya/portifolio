@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
 
   <!-- FONTES -->
@@ -12,7 +13,7 @@
   <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="CSS/Style.css">
+  <link rel="stylesheet" href="./CSS/Style.css">
 </head>
 
 <body>
@@ -44,11 +45,12 @@
           </div>
           
           <div class="about-image">
-            <img src="Fotos/Soraya.png" alt="Aíla Soraya">
+            <img src="./Fotos/Soraya.png" alt="Aíla Soraya">
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- PORTFÓLIO -->
     <section id="portfolio" class="portfolio">
@@ -58,13 +60,14 @@
 
         <div class="portfolio-grid">
 
-          <!-- BLOCO 01 -->
+          <!-- BLOCO 01: PRÉ-PRODUÇÃO (SUA FOTO COM BLUR FORTE DE FUNDO) -->
           <div class="project">
-            <div class="project-media window-placeholder">
-              <img src="Fotos/pre-producao-capa.jpg" alt="Planejamento e Roteiro" class="bg-blur">
-              <div class="status-overlay">
-                <span class="status-badge">ESTRUTURAÇÃO</span>
-                <p>Roteirização e Direção de Linha Editorial</p>
+            <div class="project-video window-placeholder" style="position: relative; overflow: hidden; background: #111;">
+              <!-- Puxando a sua foto oficial com filtro blur intenso direto no estilo -->
+              <img src="./Fotos/Soraya.png" alt="Fundo Estruturação" style="width: 100%; height: 100%; object-fit: cover; filter: blur(18px) brightness(0.3); opacity: 0.5; position: absolute; inset: 0; z-index: 1;">
+              <div class="status-overlay" style="position: relative; z-index: 2; text-align: center; padding: 20px; width: 100%;">
+                <span class="status-badge" style="letter-spacing: 2px; font-weight: 700;">EM BREVE</span>
+                <p style="font-size: 13px; color: #ffffff; font-weight: 500; margin-top: 8px; letter-spacing: 0.5px;">Roteirização e Direção de Linha Editorial</p>
               </div>
             </div>
             <div class="project-info">
@@ -83,10 +86,10 @@
             </div>
           </div>
 
-          <!-- BLOCO 02 -->
+          <!-- BLOCO 02: PRODUÇÃO (VÍDEO REAL EM LOOPING + CLICK AMPLIA) -->
           <div class="project">
             <div class="project-video">
-              <video id="videoCard" src="Vídeos/Portifolio Produção.mp4" autoplay muted loop playsinline preload="auto" onclick="abrirPlayerGrande()"></video>
+              <video id="videoCard" src="./Vídeos/Portifolio Produção.mp4" autoplay muted loop playsinline preload="auto" onclick="abrirPlayerGrande()"></video>
             </div>
             <div class="project-info">
               <div class="project-category">PRODUÇÃO & CAPTAÇÃO</div>
@@ -104,13 +107,14 @@
             </div>
           </div>
 
-          <!-- BLOCO 03 -->
+          <!-- BLOCO 03: PÓS-PRODUÇÃO (SUA FOTO COM BLUR FORTE DE FUNDO) -->
           <div class="project">
-            <div class="project-video window-placeholder">
-              <img src="Fotos/pos-producao-capa.jpg" alt="Ilha de Edição Pós-Produção" class="bg-blur">
-              <div class="status-overlay">
-                <span class="status-badge">EM BREVE</span>
-                <p>Showreel de Edição Avançada & Motion em desenvolvimento</p>
+            <div class="project-video window-placeholder" style="position: relative; overflow: hidden; background: #111;">
+              <!-- Puxando a sua foto oficial com filtro blur intenso direto no estilo -->
+              <img src="./Fotos/Soraya.png" alt="Fundo Pós-Produção" style="width: 100%; height: 100%; object-fit: cover; filter: blur(18px) brightness(0.3); opacity: 0.5; position: absolute; inset: 0; z-index: 1;">
+              <div class="status-overlay" style="position: relative; z-index: 2; text-align: center; padding: 20px; width: 100%;">
+                <span class="status-badge" style="letter-spacing: 2px; font-weight: 700;">EM BREVE</span>
+                <p style="font-size: 13px; color: #ffffff; font-weight: 500; margin-top: 8px; letter-spacing: 0.5px;">Showreel de Edição Avançada & Motion em desenvolvimento</p>
               </div>
             </div>
             <div class="project-info">
@@ -169,7 +173,7 @@
 
   </main>
 
-  <!-- RECURSO DE EXPANSÃO (LIGHTBOX) -->
+  <!-- LIGHTBOX PLAYER EXPANDIDO -->
   <div id="playerGrandeOverlay" class="video-overlay" onclick="fecharPlayerGrande(event)">
     <div class="video-modal-container">
       <button class="btn-fechar-modal" onclick="fecharPlayerGrande(event)">×</button>
@@ -177,12 +181,11 @@
     </div>
   </div>
 
-  <!-- CONTROLE DO PLAYER GIGANTE -->
   <script>
     function abrirPlayerGrande() {
       var overlay = document.getElementById('playerGrandeOverlay');
       var videoModal = document.getElementById('videoExpandido');
-      videoModal.src = "Vídeos/Portifolio Produção.mp4";
+      videoModal.src = "./Vídeos/Portifolio Produção.mp4";
       overlay.style.display = "flex";
       videoModal.muted = false;
       videoModal.play();
@@ -193,18 +196,3 @@
       var overlay = document.getElementById('playerGrandeOverlay');
       var videoModal = document.getElementById('videoExpandido');
       videoModal.pause();
-      videoModal.src = "";
-      overlay.style.display = "none";
-    }
-  </script>
-
-  <!-- RODAPÉ -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">AÍLA <span>SORAYA</span></div>
-      <p>© 2026 Aíla Soraya. Videomaker & Filmmaker</p>
-    </div>
-  </footer>
-
-</body>
-</html>
