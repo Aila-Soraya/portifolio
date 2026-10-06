@@ -170,23 +170,52 @@
     </div>
   </div>
 
+  <!-- OVERLAY CINEMA PLAYER GIGANTE -->
+  <div id="playerGrandeOverlay" class="video-overlay" onclick="fecharPlayerGrande(event)">
+    <div class="video-modal-container">
+      <button class="btn-fechar-modal" onclick="fecharPlayerGrande(event)">×</button>
+      <video id="videoExpandido" controls preload="auto"></video>
+    </div>
+  </div>
+
   <!-- SCRIPT INTERATIVO DOS VÍDEOS -->
   <script>
     function abrirPlayerGrande() {
-      var overlay = document.getElementById('playerGrandeOverlay');
-      var videoModal = document.getElementById('videoExpandido');
+      const overlay = document.getElementById('playerGrandeOverlay');
+      const videoModal = document.getElementById('videoExpandido');
+
+      videoModal.pause();
+      videoModal.removeAttribute('src');
+
       videoModal.src = "./Vídeos/Portifolio Produção.mp4";
+      videoModal.load();
+
       overlay.style.display = "flex";
+
       videoModal.muted = false;
-      videoModal.play();
+
+      videoModal.onloadedmetadata = function () {
+        videoModal.currentTime = 0;
+        videoModal.play();
+      };
     }
 
     function fecharPlayerGrande(event) {
-      if (event.target.id === 'videoExpandido') return;
-      var overlay = document.getElementById('playerGrandeOverlay');
-      var videoModal = document.getElementById('videoExpandido');
+      if (
+        event.target.id === 'videoExpandido' ||
+        event.target.closest('.video-modal-container') &&
+        !event.target.classList.contains('btn-fechar-modal')
+      ) {
+        return;
+      }
+
+      const overlay = document.getElementById('playerGrandeOverlay');
+      const videoModal = document.getElementById('videoExpandido');
+
       videoModal.pause();
-      videoModal.src = "";
+      videoModal.removeAttribute('src');
+      videoModal.load();
+
       overlay.style.display = "none";
     }
   </script>
