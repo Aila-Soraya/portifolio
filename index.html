@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- REGRAS DE DESIGN INTEGRADAS - SEM LINKS QUEBRADOS DE FORA -->
+  <!-- REGRAS DE DESIGN INTEGRADAS - ZERO DEPENDÊNCIAS DE PASTA EXTERNA -->
   <style>
     :root {
         --preto: #111111;
@@ -45,7 +45,7 @@
     main { padding-top: 80px; }
 
     /* SEÇÕES E CONTAINER BASE */
-    section { padding: 120px 6%; background: var(--preto) !important; display: block !important; }
+    section { padding: 120px 6%; background: var(--preto) !important; display: block !important; clear: both; }
     .section-container { max-width: 1400px; margin: auto; }
     .section-label { color: var(--agua) !important; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
     .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; color: #ffffff !important; }
@@ -69,7 +69,7 @@
 
     /* CAPAS COM DESFOQUE BLUR CINEMATOGRÁFICO DE 18PX */
     .window-placeholder { background: #151616 !important; display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid rgba(255,255,255,0.05) !important; position: relative; }
-    .bg-blur { width: 100% !important; height: 100% !important; object-fit: cover !important; filter: blur(18px) brightness(0.3) !important; opacity: 0.5 !important; position: absolute !important; inset: 0 !important; z-index: 1 !important; }
+    .bg-blur { width: 100% !important; height: 100% !important; object-fit: cover !important; filter: blur(18px) brightness(0.3) !important; opacity: 0.5 !important; position: absolute !important; inset: 0 !important; z-index: 1; }
     .status-overlay { position: relative !important; z-index: 2 !important; text-align: center !important; padding: 20px; width: 100% !important; }
     .status-badge { background: rgba(255, 255, 255, 0.06) !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 6px 14px; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; display: inline-block; margin-bottom: 12px; color: var(--agua-claro) !important; }
     .status-overlay p { font-size: 13px !important; color: #ffffff !important; font-weight: 500; letter-spacing: 0.5px; }
