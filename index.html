@@ -15,25 +15,36 @@
   <!-- VÍNCULO COM SEU CSS BASE -->
   <link rel="stylesheet" href="CSS/Style.css">
 
-  <!-- ESTILO DE COLUNAS BASEADO NA SUA IMAGEM DE REFERÊNCIA -->
+  <!-- ESTILO REFORÇADO PARA ELIMINAR O FUNDO BRANCO DA TELA -->
   <style>
-    /* Forçar o fundo escuro correto do site e do rodapé */
-    html, body {
+    /* Forçar a tela inteira, seções e containers a ficarem pretos */
+    html, body, section, main, .portfolio, .about, .work-process, .contact {
       background-color: #111111 !important;
-      color: #f4f5f3 !important;
+      background: #111111 !important;
+      color: #f2f0ec !important;
     }
     
-    footer, .work-process {
-      background-color: #0d0e0e !important;
-      color: #707575 !important;
+    /* Garantir que todos os textos fora dos cards fiquem claros */
+    h1, h2, h3, p, span, a {
+      color: #f2f0ec !important;
+    }
+    
+    header {
+      background: rgba(17, 17, 17, 0.95) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
     }
 
-    /* Remover as numerações soltas antigos */
+    footer {
+      background-color: #0d0e0e !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Remover as numerações soltas */
     .section-number, .group-number { 
       display: none !important; 
     }
 
-    /* Transformar a seção de portfólio em um grid de colunas iguais lado a lado */
+    /* Transformar a seção de portfólio em colunas lado a lado no PC */
     .portfolio-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
@@ -42,28 +53,28 @@
       align-items: stretch !important;
     }
 
-    /* Estilização de cada bloco como os Cards da sua foto de referência */
+    /* Configuração dos Cards com fundo suave cinza escuro */
     .portfolio-group {
       display: flex !important;
       flex-direction: column !important;
-      background: #161616 !important; /* Fundo suave do card */
+      background: #161616 !important;
       border: 1px solid rgba(255, 255, 255, 0.05) !important;
-      border-radius: 8px !important; /* Bordas arredondadas do card */
-      padding: 30px 24px !important; /* Espaçamento interno idêntico à foto */
-      text-align: center !important; /* Centralizar os textos e mídias */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+      border-radius: 8px !important;
+      padding: 30px 24px !important;
+      text-align: center !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
       height: 100% !important;
       margin-bottom: 0 !important;
     }
 
-    /* Ajuste das mídias (Vídeos e Capas) centralizadas no topo do card */
     .project-media {
       width: 100% !important;
       aspect-ratio: 16 / 9 !important;
       border-radius: 6px !important;
       overflow: hidden !important;
-      margin: 0 auto 20px auto !important; /* Margem inferior para afastar o texto */
+      margin: 0 auto 20px auto !important;
       order: 1 !important;
+      position: relative;
     }
 
     .project-media video, .project-media img {
@@ -72,7 +83,7 @@
       object-fit: cover !important;
     }
     
-    /* Cursor de clique para indicar que o vídeo abre expandido */
+    /* Adicionar cursor de clique em cima do vídeo */
     .video-clicavel {
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -81,7 +92,6 @@
       transform: scale(1.02);
     }
 
-    /* Alinhamento dos textos e títulos logo abaixo da mídia */
     .group-header {
       order: 2 !important;
       display: flex !important;
@@ -91,7 +101,6 @@
       width: 100% !important;
     }
 
-    /* Título principal do projeto */
     .group-header h3 {
       font-family: var(--fonte-titulo);
       font-size: 26px !important;
@@ -101,14 +110,11 @@
       color: #ffffff !important;
     }
 
-    /* Centralizar e organizar as tags de especialidades no card */
     .expertise-tags {
       display: flex !important;
       flex-wrap: wrap !important;
       justify-content: center !important;
       gap: 6px !important;
-      margin-bottom: 18px !important;
-      width: 100% !important;
     }
 
     .tag {
@@ -116,21 +122,20 @@
       border: 1px solid rgba(255, 255, 255, 0.08) !important;
       padding: 4px 10px !important;
       font-size: 10px !important;
-      color: #83c4c1 !important; /* Toque de verde-água sutil nas tags */
+      color: #5faaa8 !important;
       border-radius: 3px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    /* Descrição do trabalho (Texto principal do card) */
     .group-header p {
       font-size: 13px !important;
       line-height: 1.6 !important;
       color: #aaaaaa !important;
-      text-align: center !important; /* Alinhamento centralizado como na foto */
+      text-align: center;
     }
 
-    /* ---------- ESTILO DO PLAYER EXPANDIDO (LIGHTBOX) ---------- */
+    /* ---------- ESTILO DO RECURSO DE EXPANSÃO (LIGHTBOX) ---------- */
     .video-overlay {
       display: none;
       position: fixed;
@@ -165,12 +170,9 @@
       color: #ffffff;
       font-size: 32px;
       cursor: pointer;
-      font-family: Arial, sans-serif;
-      transition: opacity 0.2s;
     }
-    .btn-fechar-modal:hover { opacity: 0.7; }
 
-    /* Layout responsivo: vira uma coluna única em telas de celulares */
+    /* Celular: vira uma única coluna vertical */
     @media (max-width: 900px) {
       .portfolio-grid {
         grid-template-columns: 1fr !important;
@@ -193,81 +195,87 @@
     </nav>
   </header>
 
-  <main>
-
-    <!-- SOBRE (QUEM SOU EU) -->
-    <section id="inicio" class="about">
-      <div class="section-container">
-        <div class="section-label">Biografia</div>
-        <div class="about-grid">
-          <div class="about-text">
-            <h1>AÍLA<br>SORAYA</h1>
-            <p class="subtitle">Videomaker & Filmmaker</p>
-            <p class="description">
-              Sou Aíla Soraya, videomaker e especialista em pós-produção audiovisual com foco em podcasts e conteúdo short-form de alta retenção. Minha trajetória é marcada pela versatilidade: domino a linguagem narrativa necessária para transformar gravações brutas em cortes magnéticos para redes sociais e episódios fluidos de podcast. Já colaborei com profissionais de múltiplos segmentos — desde o posicionamento de autoridade de psicólogos e terapeutas até a estética ágil de gamers, influencers e o setor de tecnologia. Cuido de todo o ecossistema de finalização: edição multicâmera, tratamento cinematográfico de cor, engenharia de áudio e motion graphics, entregando um produto final lapidado e pronto para tracionar em qualquer plataforma.
-            </p>
-          </div>
-          
-          <div class="about-image">
-            <img src="Fotos/Soraya.png" alt="Aíla Soraya">
-          </div>
+  <!-- SOBRE (QUEM SOU EU) -->
+  <section id="inicio" class="about">
+    <div class="section-container">
+      <div class="section-label">Biografia</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h1>AÍLA<br>SORAYA</h1>
+          <p class="subtitle">Videomaker & Filmmaker</p>
+          <p class="description">
+            Sou Aíla Soraya, videomaker e especialista em pós-produção audiovisual com foco em podcasts e conteúdo short-form de alta retenção. Minha trajetória é marcada pela versatilidade: domino a linguagem narrativa necessária para transformar gravações brutas em cortes magnéticos para redes sociais e episódios fluidos de podcast. Já colaborei com profissionais de múltiplos segmentos — desde o posicionamento de autoridade de psicólogos e terapeutas até a estética ágil de gamers, influencers e o setor de tecnologia. Cuido de todo o ecossistema de finalização: edição multicâmera, tratamento cinematográfico de cor, engenharia de áudio e motion graphics, entregando um produto final lapidado e pronto para tracionar em qualquer plataforma.
+          </p>
+        </div>
+        
+        <div class="about-image">
+          <img src="Fotos/Soraya.png" alt="Aíla Soraya">
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="portfolio">
+    <div class="section-container">
+      <div class="section-label">Projetos Selecionados</div>
+      <h2>PORTFÓLIO</h2>
 
-    <!-- PORTFÓLIO E CARDS EM COLUNAS COMPATÍVEIS COM A REFERÊNCIA -->
-    <section id="portfolio" class="portfolio">
-      <div class="section-container">
-        <div class="section-label">Projetos Selecionados</div>
-        <h2 class="section-title">PORTFÓLIO</h2>
+      <div class="portfolio-grid">
 
-        <div class="portfolio-grid">
-
-          <!-- CARD 01: PRÉ-PRODUÇÃO -->
-          <div class="portfolio-group">
-            <div class="project-media window-placeholder">
-              <img src="Fotos/pre-producao-capa.jpg" alt="Planejamento e Roteiro" class="bg-blur" style="position: absolute; opacity: 0.12; filter: blur(4px); width: 100%; height: 100%; object-fit: cover;">
-              <div class="status-overlay" style="position: relative; text-align: center; padding: 20px; z-index: 2;">
-                <span class="status-badge">ESTRUTURAÇÃO</span>
-                <p>Roteirização e Direção de Linha Editorial</p>
-              </div>
-            </div>
-            <div class="group-header">
-              <h3>PRÉ-PRODUÇÃO & ESTRATÉGIA</h3>
-              <div class="expertise-tags">
-                <span class="tag">Roteirização de Cortes</span>
-                <span class="tag">Estratégia de Retenção</span>
-                <span class="tag">Conceito de Cenário</span>
-                <span class="tag">Briefing de Convidados</span>
-                <span class="tag">Linha Editorial</span>
-              </div>
-              <p>
-                Planejamento e preparação minuciosa para podcasts e canais de cortes. Desenvolvo a estrutura ideal e o roteiro estratégico para garantir que o conteúdo seja magnético antes mesmo de ligar os microfones.
-              </p>
+        <!-- CARD 01: PRÉ-PRODUÇÃO -->
+        <div class="portfolio-group">
+          <div class="project-media window-placeholder">
+            <img src="Fotos/pre-producao-capa.jpg" alt="Planejamento e Roteiro" class="bg-blur" style="position: absolute; opacity: 0.12; filter: blur(4px); width: 100%; height: 100%; object-fit: cover;">
+            <div class="status-overlay" style="position: relative; text-align: center; padding: 20px; z-index: 2;">
+              <span class="status-badge">ESTRUTURAÇÃO</span>
+              <p>Roteirização e Direção de Linha Editorial</p>
             </div>
           </div>
-
-          <!-- CARD 02: PRODUÇÃO (VÍDEO CLICÁVEL PARA EXPANDIR) -->
-          <div class="portfolio-group">
-            <div class="project-media">
-              <video src="Vídeos/Portifolio Produção.mp4" autoplay muted loop playsinline preload="auto" class="video-clicavel" onclick="abrirPlayerGrande()"></video>
+          <div class="group-header">
+            <h3>PRÉ-PRODUÇÃO & ESTRATÉGIA</h3>
+            <div class="expertise-tags">
+              <span class="tag">Roteirização de Cortes</span>
+              <span class="tag">Estratégia de Retenção</span>
+              <span class="tag">Conceito de Cenário</span>
+              <span class="tag">Briefing de Convidados</span>
+              <span class="tag">Linha Editorial</span>
             </div>
-            <div class="group-header">
-              <h3>PRODUÇÃO & CAPTAÇÃO</h3>
-              <div class="expertise-tags">
-                <span class="tag">Gravação Multicâmera</span>
-                <span class="tag">Direção de Podcasts</span>
-                <span class="tag">Operação de Câmera</span>
-                <span class="tag">Iluminação de Estúdio</span>
-                <span class="tag">Captação de Áudio</span>
-              </div>
-              <p>
-                Captação audiovisual profissional com foco em mesas de podcast, talk-shows e conteúdos para internet, garantindo enquadramentos dinâmicos e áudio impecável no set.
-              </p>
+            <p>
+              Planejamento e preparação minuciosa para podcasts e canais de cortes. Desenvolvo a structure ideal e o roteiro estratégico para garantir que o conteúdo seja magnético antes mesmo de ligar os microfones.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 02: PRODUÇÃO (MANTIDO EM LOOPING AUTOMÁTICO + CLICK FUNÇÃO TELA CHEIA) -->
+        <div class="portfolio-group">
+          <div class="project-media">
+            <video src="Vídeos/Portifolio Produção.mp4" autoplay muted loop playsinline preload="auto" class="video-clicavel" onclick="abrirPlayerGrande()"></video>
+          </div>
+          <div class="group-header">
+            <h3>PRODUÇÃO & CAPTAÇÃO</h3>
+            <div class="expertise-tags">
+              <span class="tag">Gravação Multicâmera</span>
+              <span class="tag">Direção de Podcasts</span>
+              <span class="tag">Operação de Câmera</span>
+              <span class="tag">Iluminação de Estúdio</span>
+              <span class="tag">Captação de Áudio</span>
+            </div>
+            <p>
+              Captação audiovisual profissional com foco em mesas de podcast, talk-shows e conteúdos para internet, garantindo enquadramentos dinâmicos e áudio impecável no set.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 03: PÓS-PRODUÇÃO -->
+        <div class="portfolio-group">
+          <div class="project-media window-placeholder">
+            <img src="Fotos/pos-producao-capa.jpg" alt="Ilha de Edição Pós-Produção" class="bg-blur" style="position: absolute; opacity: 0.12; filter: blur(4px); width: 100%; height: 100%; object-fit: cover;">
+            <div class="status-overlay" style="position: relative; text-align: center; padding: 20px; z-index: 2;">
+              <span class="status-badge">EM BREVE</span>
+              <p>Showreel de Edição Avançada & Motion em desenvolvimento</p>
             </div>
           </div>
-
-          <!-- CARD 03: PÓS-PRODUÇÃO -->
-          <div class="portfolio-group">
-            <div class="project-media window-placeholder">
+          <div class="group-header">
+            <h3>PÓS-PRODUÇÃO & FINALIZAÇÃO</h3>
+            <div class="expertise-tags">
