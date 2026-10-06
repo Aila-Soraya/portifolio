@@ -4,125 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
 
-  <!-- FONTES -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- DESIGN DO PORTFÓLIO EMBUTIDO (Evita erros de carregamento 404) -->
-  <style>
-    :root {
-        --preto: #111111;
-        --preto-suave: #181a1a;
-        --cinza-escuro: #252828;
-        --cinza: #707575;
-        --cinza-claro: #d9dddd;
-        --branco: #f4f5f3;
-        --agua: #5faaa8;
-        --agua-claro: #83c4c1;
-        --fonte-titulo: 'Bebas Neue', sans-serif;
-        --fonte-texto: 'Montserrat', sans-serif;
-        --transicao: 0.35s ease;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--preto); color: var(--branco); font-family: var(--fonte-texto); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
-    img, video { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* MENU NAVEGAÇÃO */
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 24px 6%; background: rgba(17, 17, 17, 0.88); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-    nav { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--fonte-titulo); font-size: 30px; letter-spacing: 2px; }
-    .logo span { color: var(--agua); }
-    .nav-links { display: flex; align-items: center; gap: 35px; list-style: none; }
-    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cinza-claro); transition: color var(--transicao); }
-    .nav-links a:hover { color: var(--agua-claro); }
-
-    /* SEÇÕES BASE */
-    section { padding: 120px 6%; background: var(--preto); }
-    .section-container { max-width: 1400px; margin: auto; }
-    .section-label { color: var(--agua); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
-    .section-title { font-family: var(--fonte-titulo); font-size: clamp(50px, 7vw, 90px); font-weight: 400; line-height: 0.9; letter-spacing: 1px; margin-bottom: 50px; }
-
-    /* QUEM SOU (BIOGRAFIA LADO A LADO) */
-    .about { background: var(--preto-suave); }
-    .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-    .about-text h1 { font-family: var(--fonte-titulo); font-size: clamp(55px, 8vw, 110px); font-weight: 400; line-height: 0.9; margin-bottom: 10px; }
-    .subtitle { color: var(--agua-claro); text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; font-weight: 500; }
-    .description { color: var(--cinza-claro); font-size: 16px; line-height: 1.9; font-weight: 300; text-align: justify; }
-    .about-image img { width: 100%; max-width: 440px; border-radius: 4px; display: block; margin: 0 auto; filter: grayscale(100%); transition: filter var(--transicao); }
-    .about-image:hover img { filter: grayscale(0%); }
-
-    /* GRID DO PORTFÓLIO EM 3 COLUNAS */
-    .portfolio { background: var(--preto); }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; align-items: stretch; margin-top: 40px; }
-    .project { display: flex; flex-direction: column; background: var(--preto-suave); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 24px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); height: 100%; }
-
-    .project-video, .project-media { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--cinza-escuro); border-radius: 6px; margin-bottom: 20px; }
-    .project-video video, .project-video img { width: 100%; height: 100%; object-fit: cover; }
-    #videoCard { cursor: pointer; transition: transform 0.3s ease; }
-    #videoCard:hover { transform: scale(1.02); }
-
-    /* SEÇÃO COM EFEITO BLUR INTENSO NAS CAPAS */
-    .window-placeholder { background: #151616; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); position: relative; }
-    .bg-blur { width: 100%; height: 100%; object-fit: cover; filter: blur(18px) brightness(0.3); opacity: 0.5; position: absolute; inset: 0; z-index: 1; }
-    .status-overlay { position: relative; z-index: 2; text-align: center; padding: 20px; width: 100%; }
-    .status-badge { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; display: inline-block; margin-bottom: 12px; color: var(--agua-claro); }
-    .status-overlay p { font-size: 12px; color: var(--branco); font-weight: 500; letter-spacing: 0.5px; }
-
-    /* TEXTOS INTERNOS DOS CARDS */
-    .project-info { padding-top: 5px; text-align: center; }
-    .project-category { color: var(--agua); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-    .project-title { font-family: var(--fonte-titulo); font-size: 26px; font-weight: 400; letter-spacing: 1px; color: var(--branco); margin-bottom: 12px; }
-    .expertise-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 15px; }
-    .tag { background: var(--preto); border: 1px solid rgba(255, 255, 255, 0.08); padding: 4px 10px; font-size: 10px; color: var(--cinza-claro); border-radius: 3px; font-weight: 500; }
-    .project-description { color: var(--cinza); font-size: 13px; line-height: 1.6; text-align: center; }
-
-    /* SOFTWARES GRID */
-    .work-process { background: var(--preto-suave); }
-    .softwares-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 20px; }
-    .software-item { background: var(--preto); border: 1px solid rgba(255, 255, 255, 0.06); padding: 24px; text-align: center; border-radius: 4px; transition: var(--transicao); }
-    .software-item:hover { background: var(--cinza-escuro); border-color: var(--agua); }
-    .software-item span { font-size: 14px; font-weight: 500; color: var(--cinza-claro); }
-
-    /* CONTATO */
-    .contact { min-height: 70vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--preto-suave), var(--preto)); }
-    .contact-content { width: 100%; max-width: 1400px; margin: auto; text-align: left; }
-    .contact-title { font-family: var(--fonte-titulo); font-size: clamp(65px, 11vw, 150px); line-height: 0.85; font-weight: 400; }
-    .contact-title span { color: var(--agua); }
-    .contact-text { max-width: 500px; margin-top: 25px; color: var(--cinza-claro); font-size: 15px; line-height: 1.8; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 35px; }
-    .contact-links a { padding: 13px 24px; border: 1px solid var(--agua); color: var(--agua-claro); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: background var(--transicao), color var(--transicao); }
-    .contact-links a:hover { background: var(--agua); color: var(--preto); }
-
-    /* FOOTER */
-    footer { padding: 40px 6%; background: #0d0e0e; border-top: 1px solid rgba(255, 255, 255, 0.06); }
-    .footer-content { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; color: var(--cinza); font-size: 11px; letter-spacing: 1px; }
-
-    /* OVERLAY PLAYER GIGANTE */
-    .video-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.96); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-    .video-modal-container { width: 90%; max-width: 1100px; aspect-ratio: 16 / 9; position: relative; }
-    .video-modal-container video { width: 100%; height: 100%; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
-    .btn-fechar-modal { position: absolute; top: -45px; right: 0; background: none; border: none; color: #ffffff; font-size: 35px; cursor: pointer; }
-
-    /* GRANULAÇÃO CINEMATOGRÁFICA */
-    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 9999; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://w3.org id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
-
-    /* RESPONSIVIDADE CELULAR */
-    @media (max-width: 900px) {
-        header { padding: 20px 5%; }
-        .nav-links { display: none; }
-        section { padding: 90px 5%; }
-        .about-grid { grid-template-columns: 1fr; gap: 50px; }
-        .portfolio-grid { grid-template-columns: 1fr; gap: 40px; }
-        .footer-content { flex-direction: column; gap: 12px; align-items: flex-start; }
-    }
-  </style>
+  <!-- APENAS A CONEXÃO COM O SEU ARQUIVO DE ESTILOS -->
+  <link rel="stylesheet" href="CSS/Style.css">
 </head>
 
 <body>
@@ -130,7 +15,7 @@
   <!-- MENU -->
   <header>
     <nav>
-      <div class="logo">AÍLA <span>SORAYA</span></div>
+      <a href="#inicio" class="logo">AÍLA <span>SURAYA</span></a>
       <div class="nav-links">
         <a href="#inicio">Quem Sou</a>
         <a href="#portfolio">Portfólio</a>
@@ -150,3 +35,168 @@
             <h1>AÍLA<br>SORAYA</h1>
             <p class="subtitle">Videomaker & Filmmaker</p>
             <p class="description">
+              Sou Aíla Soraya, videomaker e especialista em pós-produção audiovisual com foco em podcasts e conteúdo short-form de alta retenção. Minha trajetória é marcada pela versatilidade: domino a linguagem narrativa necessária para transformar gravações brutas em cortes magnéticos para redes sociais e episódios fluidos de podcast. Já colaborei com profissionais de múltiplos segmentos — desde o posicionamento de autoridade de psicólogos e terapeutas até a estética ágil de gamers, influencers e o setor de tecnologia. Cuido de todo o ecossistema de finalização: edição multicâmera, tratamento cinematográfico de cor, engenharia de áudio e motion graphics, entregando um produto final lapidado e pronto para tracionar em qualquer plataforma.
+            </p>
+          </div>
+          
+          <div class="about-image">
+            <img src="Fotos/Soraya.png" alt="Aíla Soraya">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio" class="portfolio">
+      <div class="section-container">
+        <div class="section-label">Projetos Selecionados</div>
+        <h2 class="section-title">PORTFÓLIO</h2>
+
+        <div class="portfolio-grid">
+          <!-- BLOCO 01 -->
+          <div class="project">
+            <div class="project-video window-placeholder">
+              <img src="Fotos/Soraya.png" alt="Fundo Estruturação" class="bg-blur">
+              <div class="status-overlay">
+                <span class="status-badge">EM BREVE</span>
+                <p>Roteirização e Direção de Linha Editorial</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">PRÉ-PRODUÇÃO & ESTRATÉGIA</div>
+              <h3 class="project-title">PRÉ-PRODUÇÃO & ESTRATÉGIA</h3>
+              <div class="expertise-tags">
+                <span class="tag">Roteirização de Cortes</span>
+                <span class="tag">Estratégia de Retenção</span>
+                <span class="tag">Conceito de Cenário</span>
+                <span class="tag">Briefing de Convidados</span>
+                <span class="tag">Linha Editorial</span>
+              </div>
+              <p class="project-description">
+                Planejamento e preparação minuciosa para podcasts e canais de cortes. Desenvolvo a estrutura ideal e o roteiro estratégico para garantir que o conteúdo seja magnético antes mesmo de ligar os microfones.
+              </p>
+            </div>
+          </div>
+
+          <!-- BLOCO 02 -->
+          <div class="project">
+            <div class="project-video">
+              <video id="videoCard" src="Vídeos/Portifolio Produção.mp4" autoplay muted loop playsinline preload="auto" onclick="abrirPlayerGrande()"></video>
+            </div>
+            <div class="project-info">
+              <div class="project-category">PRODUÇÃO & CAPTAÇÃO</div>
+              <h3 class="project-title">PRODUÇÃO & CAPTAÇÃO</h3>
+              <div class="expertise-tags">
+                <span class="tag">Gravação Multicâmera</span>
+                <span class="tag">Direção de Podcasts</span>
+                <span class="tag">Operação de Câmera</span>
+                <span class="tag">Iluminação de Estúdio</span>
+                <span class="tag">Captação de Áudio</span>
+              </div>
+              <p class="project-description">
+                Captação audiovisual profissional com foco em mesas de podcast, talk-shows e conteúdos para internet, garantindo enquadramentos dinâmicos e áudio impecável no set.
+              </p>
+            </div>
+          </div>
+
+          <!-- BLOCO 03 -->
+          <div class="project">
+            <div class="project-video window-placeholder">
+              <img src="Fotos/Soraya.png" alt="Fundo Pós-Produção" class="bg-blur">
+              <div class="status-overlay">
+                <span class="status-badge">EM BREVE</span>
+                <p>Showreel de Edição Avançada & Motion em desenvolvimento</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">PÓS-PRODUÇÃO & FINALIZAÇÃO</div>
+              <h3 class="project-title">PÓS-PRODUÇÃO & FINALIZAÇÃO</h3>
+              <div class="expertise-tags">
+                <span class="tag">Edição de Podcasts</span>
+                <span class="tag">Cortes de Alta Retenção</span>
+                <span class="tag">Color Grading</span>
+                <span class="tag">Motion & Legendas Animadas</span>
+                <span class="tag">Sound Design & Mixagem</span>
+                <span class="tag">Identidade Visual de Canais</span>
+                <span class="tag">Masterização Multiplataforma</span>
+              </div>
+              <p class="project-description">
+                Onde a mágica acontece. Transformo gravações brutas em episódios fluidos e cortes altamente virais. Cuido desde a engenharia de áudio e sincronia multicâmera até o tratamento de cor e inserção de legendas dinâmicas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARES -->
+    <section id="softwares" class="work-process">
+      <div class="section-container">
+        <div class="section-label">Ferramentas de Ecossistema</div>
+        <h2 class="section-title">SOFTWARES</h2>
+        <div class="softwares-grid">
+          <div class="software-item"><span>Adobe Premiere Pro</span></div>
+          <div class="software-item"><span>Adobe After Effects</span></div>
+          <div class="software-item"><span>DaVinci Resolve</span></div>
+          <div class="software-item"><span>Adobe Audition</span></div>
+          <div class="software-item"><span>Adobe Photoshop</span></div>
+          <div class="software-item"><span>Adobe Illustrator</span></div>
+          <div class="software-item"><span>CapCut Pro</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact">
+      <div class="section-container">
+        <div class="contact-content">
+          <h2 class="contact-title">VAMOS CRIAR<br>ALGO <span>JUNTOS?</span></h2>
+          <p class="contact-text">Tem um projeto audiovisual em mente ou precisa de uma produção? Entre em contato agora.</p>
+          <div class="contact-links">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://wa.me" target="_blank">WhatsApp</a>
+            <a href="mailto:ailagaraneesh@gmail.com">E-mail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL EXPANDIDO (LIGHTBOX) -->
+  <div id="playerGrandeOverlay" class="video-overlay" onclick="fecharPlayerGrande(event)">
+    <div class="video-modal-container">
+      <button class="btn-fechar-modal" onclick="fecharPlayerGrande(event)">×</button>
+      <video id="videoExpandido" controls preload="auto"></video>
+    </div>
+  </div>
+
+  <script>
+    function abrirPlayerGrande() {
+      var overlay = document.getElementById('playerGrandeOverlay');
+      var videoModal = document.getElementById('videoExpandido');
+      videoModal.src = "Vídeos/Portifolio Produção.mp4";
+      overlay.style.display = "flex";
+      videoModal.muted = false;
+      videoModal.play();
+    }
+
+    function fecharPlayerGrande(event) {
+      if (event.target.id === 'videoExpandido') return;
+      var overlay = document.getElementById('playerGrandeOverlay');
+      var videoModal = document.getElementById('videoExpandido');
+      videoModal.pause();
+      videoModal.src = "";
+      overlay.style.display = "none";
+    }
+  </script>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">AÍLA <span>SORAYA</span></div>
+      <p>© 2026 Aíla Soraya. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
