@@ -75,26 +75,38 @@
             </div>
           </div>
 
-          <!-- CARD 2 (VÍDEO CLICÁVEL) -->
-          <div class="project">
-            <div class="project-video">
-              <video id="videoCard" class="video-clicavel" src="./Video/Portfolio Produção.mp4" autoplay muted loop playsinline preload="auto" onclick="abrirPlayerGrande()"></video>
-            </div>
-            <div class="project-info">
-              <div class="project-category">PRODUÇÃO & CAPTAÇÃO</div>
-              <h3 class="project-title">PRODUÇÃO & CAPTAÇÃO</h3>
-              <div class="expertise-tags">
-                <span class="tag">Gravação Multicâmera</span>
-                <span class="tag">Direção de Podcasts</span>
-                <span class="tag">Operação de Câmera</span>
-                <span class="tag">Iluminação de Estúdio</span>
-                <span class="tag">Captação de Áudio</span>
-              </div>
-              <p class="project-description">
-                Captação audiovisual profissional com foco em mesas de podcast, talk-shows e conteúdos para internet, garantindo enquadramentos dinâmicos e áudio impecável no set.
-              </p>
-            </div>
-          </div>
+         
+<!-- CARD 2 (VÍDEO CLICÁVEL) -->
+<div class="project">
+  <div class="project-video">
+    <iframe
+      id="videoCard"
+      class="video-clicavel"
+      src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1"
+      title="Portfólio de produção audiovisual"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="project-info">
+    <div class="project-category">PRODUÇÃO & CAPTAÇÃO</div>
+    <h3 class="project-title">PRODUÇÃO & CAPTAÇÃO</h3>
+    <div class="expertise-tags">
+      <span class="tag">Gravação Multicâmera</span>
+      <span class="tag">Direção de Podcasts</span>
+      <span class="tag">Operação de Câmera</span>
+      <span class="tag">Iluminação de Estúdio</span>
+      <span class="tag">Captação de Áudio</span>
+    </div>
+    <p class="project-description">
+      Captação audiovisual profissional com foco em mesas de podcast,
+      talk-shows e conteúdos para internet, garantindo enquadramentos
+      dinâmicos e áudio impecável no set.
+    </p>
+  </div>
+</div>
 
           <!-- CARD 3 -->
           <div class="project">
@@ -162,63 +174,61 @@
   </div>
 </section>
 
-  <!-- OVERLAY CINEMA PLAYER GIGANTE -->
-  <div id="playerGrandeOverlay" class="video-overlay" onclick="fecharPlayerGrande(event)">
-    <div class="video-modal-container">
-      <button class="btn-fechar-modal" onclick="fecharPlayerGrande(event)">×</button>
-      <video id="videoExpandido" controls preload="auto"></video>
-    </div>
-  </div>
 
-  <!-- OVERLAY CINEMA PLAYER GIGANTE -->
-  <div id="playerGrandeOverlay" class="video-overlay" onclick="fecharPlayerGrande(event)">
-    <div class="video-modal-container">
-      <button class="btn-fechar-modal" onclick="fecharPlayerGrande(event)">×</button>
-      <video id="videoExpandido" controls preload="auto"></video>
-    </div>
+<!-- OVERLAY CINEMA PLAYER GIGANTE -->
+<div id="playerGrandeOverlay"
+     class="video-overlay"
+     onclick="fecharPlayerGrande(event)">
+
+  <div class="video-modal-container">
+    <button
+      type="button"
+      class="btn-fechar-modal"
+      onclick="fecharPlayerGrande(event)"
+      aria-label="Fechar vídeo">×</button>
+
+    <iframe
+      id="videoExpandido"
+      title="Portfólio de produção audiovisual"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
+</div>
+
 
   <!-- SCRIPT INTERATIVO DOS VÍDEOS -->
-  <script>
-    function abrirPlayerGrande() {
-      const overlay = document.getElementById('playerGrandeOverlay');
-      const videoModal = document.getElementById('videoExpandido');
+ 
+<script>
+  const videoYouTube = "WFLGj0hIWlU";
 
-      videoModal.pause();
-      videoModal.removeAttribute('src');
+  function abrirPlayerGrande() {
+    const overlay = document.getElementById("playerGrandeOverlay");
+    const videoModal = document.getElementById("videoExpandido");
 
-      videoModal.src = "./Video/Portifolio Produção.mp4";
-      videoModal.load();
+    videoModal.src =
+      "https://www.youtube.com/embed/" + videoYouTube +
+      "?autoplay=1&playsinline=1&rel=0";
 
-      overlay.style.display = "flex";
+    overlay.style.display = "flex";
+  }
 
-      videoModal.muted = false;
-
-      videoModal.onloadedmetadata = function () {
-        videoModal.currentTime = 0;
-        videoModal.play();
-      };
+  function fecharPlayerGrande(event) {
+    if (event.target.closest(".video-modal-container") &&
+        !event.target.classList.contains("btn-fechar-modal")) {
+      return;
     }
 
-    function fecharPlayerGrande(event) {
-      if (
-        event.target.id === 'videoExpandido' ||
-        event.target.closest('.video-modal-container') &&
-        !event.target.classList.contains('btn-fechar-modal')
-      ) {
-        return;
-      }
+    const overlay = document.getElementById("playerGrandeOverlay");
+    const videoModal = document.getElementById("videoExpandido");
 
-      const overlay = document.getElementById('playerGrandeOverlay');
-      const videoModal = document.getElementById('videoExpandido');
+    videoModal.src = "";
+    overlay.style.display = "none";
+  }
+</script>
 
-      videoModal.pause();
-      videoModal.removeAttribute('src');
-      videoModal.load();
-
-      overlay.style.display = "none";
-    }
-  </script>
 
   <!-- RODAPÉ -->
   <footer>
