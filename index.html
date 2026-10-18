@@ -78,17 +78,22 @@
          
 <!-- CARD 2 (VÍDEO CLICÁVEL) -->
 <div class="project">
-  <div class="project-video">
-    <iframe
-      id="videoCard"
-      class="video-clicavel"
-      src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1"
-      title="Portfólio de produção audiovisual"
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+  
+<div class="project-video" onclick="abrirPlayerGrande()">
+  <iframe
+    class="video-clicavel"
+    src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1"
+    title="Portfólio de produção audiovisual"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    tabindex="-1">
+  </iframe>
+  <button
+    type="button"
+    class="video-card-click"
+    aria-label="Abrir vídeo com som">
+  </button>
+</div>
 
   <div class="project-info">
     <div class="project-category">PRODUÇÃO & CAPTAÇÃO</div>
@@ -201,6 +206,7 @@
 
   <!-- SCRIPT INTERATIVO DOS VÍDEOS -->
  
+
 <script>
   const videoYouTube = "WFLGj0hIWlU";
 
@@ -210,7 +216,7 @@
 
     videoModal.src =
       "https://www.youtube.com/embed/" + videoYouTube +
-      "?autoplay=1&playsinline=1&rel=0";
+      "?autoplay=1&controls=1&playsinline=1&rel=0";
 
     overlay.style.display = "flex";
   }
@@ -228,6 +234,7 @@
     overlay.style.display = "none";
   }
 </script>
+
 
 
   <!-- RODAPÉ -->
