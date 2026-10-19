@@ -186,27 +186,64 @@
 
 
 <!-- OVERLAY CINEMA PLAYER GIGANTE -->
+
+<!-- PLAYER AMPLIADO -->
 <div id="playerGrandeOverlay"
      class="video-overlay"
      onclick="fecharPlayerGrande(event)">
 
   <div class="video-modal-container">
+
     <button
       type="button"
       class="btn-fechar-modal"
       onclick="fecharPlayerGrande(event)"
-      aria-label="Fechar vídeo">×</button>
+      aria-label="Fechar vídeo">
+      ×
+    </button>
 
     <iframe
       id="videoExpandido"
       title="Portfólio de produção audiovisual"
       src=""
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
       allowfullscreen>
     </iframe>
+
   </div>
 </div>
+
+<!-- SCRIPT DO PLAYER -->
+<script>
+  const videoYouTube = "WFLGj0hIWlU";
+
+  function abrirPlayerGrande() {
+    const overlay = document.getElementById("playerGrandeOverlay");
+    const videoModal = document.getElementById("videoExpandido");
+
+    videoModal.src =
+      "https://www.youtube.com/embed/" + videoYouTube +
+      "?autoplay=1&controls=1&fs=1&playsinline=1&rel=0";
+
+    overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function fecharPlayerGrande(event) {
+    if (event.target.closest(".video-modal-container") &&
+        !event.target.classList.contains("btn-fechar-modal")) {
+      return;
+    }
+
+    const overlay = document.getElementById("playerGrandeOverlay");
+    const videoModal = document.getElementById("videoExpandido");
+
+    videoModal.src = "";
+    overlay.style.display = "none";
+    document.body.style.overflow = "";
+  }
+</script>
+
 
 
   <!-- SCRIPT INTERATIVO DOS VÍDEOS -->
