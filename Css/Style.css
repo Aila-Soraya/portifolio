@@ -884,6 +884,94 @@ section {
   }
 }
 
+/* AJUSTES DE COMPOSIÇÃO */
+
+.portfolio-grid {
+  grid-template-columns: minmax(0, 1000px);
+  justify-content: center;
+}
+
+.project {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* CONTATO CENTRALIZADO */
+
+.contact-content {
+  text-align: center;
+}
+
+.contact .section-label {
+  text-align: center;
+}
+
+.contact-title {
+  margin-inline: auto;
+}
+
+.contact-text {
+  margin: 24px auto 0;
+}
+
+.contact-links {
+  justify-content: center;
+}
+
+/* RODAPÉ MAIS EQUILIBRADO */
+
+.site-footer {
+  padding: 32px 6%;
+}
+
+.footer-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-content p {
+  line-height: 1.8;
+}
+
+/* AJUSTES PARA CELULAR */
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project {
+    padding: 10px;
+  }
+
+  .contact {
+    min-height: auto;
+  }
+
+  .contact-content {
+    text-align: center;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+
+  .footer-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
 /* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
