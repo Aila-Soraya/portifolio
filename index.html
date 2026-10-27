@@ -9,11 +9,13 @@
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
   <link rel="stylesheet" href="./Css/Style.css">
 </head>
+
 <body>
 
 <header>
   <nav>
     <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
+
     <div class="nav-links">
       <a href="#inicio">Quem Sou</a>
       <a href="#portfolio">Portfólio</a>
@@ -23,12 +25,16 @@
 </header>
 
 <main>
+
+  <!-- QUEM SOU -->
   <section id="inicio" class="about reveal">
     <div class="about-background" aria-hidden="true"></div>
+
     <div class="section-container">
       <div class="section-label reveal-item">BIOGRAFIA</div>
 
       <div class="about-grid">
+
         <div class="about-text">
           <h1 class="hero-name">
             <span>Aíla</span>
@@ -59,40 +65,61 @@
 
         <div class="about-image reveal-item">
           <div class="portrait-frame">
-            <img src="./Fotos/Soraya.png" alt="Retrato de Aíla Soraya">
+            <img
+              src="./Fotos/Soraya.png"
+              alt="Retrato de Aíla Soraya"
+            >
           </div>
-          <span class="image-caption">AÍLA SORAYA — AUDIOVISUAL</span>
+
+          <span class="image-caption">
+            AÍLA SORAYA — AUDIOVISUAL
+          </span>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- PORTFÓLIO -->
   <section id="portfolio" class="portfolio reveal">
     <div class="section-container">
-      <div class="section-label reveal-item">PROJETO EM DESTAQUE</div>
+
+      <div class="section-label reveal-item">
+        PROJETO EM DESTAQUE
+      </div>
 
       <div class="portfolio-heading reveal-item">
-        <h2 class="section-title">Meu universo<br><span>audiovisual.</span></h2>
+        <h2 class="section-title">
+          Meu universo<br>
+          <span>audiovisual.</span>
+        </h2>
+
         <p class="portfolio-intro">
-          Um pouco do meu olhar, da minha técnica e da minha forma de contar histórias.
+          Um pouco do meu olhar, da minha técnica e da minha forma
+          de contar histórias.
         </p>
       </div>
 
       <div class="portfolio-grid">
+
         <article class="project reveal-item">
+
+          <!-- Prévia em looping, sem som -->
           <button
             type="button"
             class="project-video"
-            aria-label="Reproduzir demoreel em tela ampliada"
-            onclick="abrirPlayerGrande()">
+            aria-label="Abrir demoreel com áudio e controles"
+            onclick="abrirPlayerGrande()"
+          >
 
             <iframe
               class="video-clicavel"
-              src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1"
+              src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1&rel=0"
               title="Prévia do demoreel de Aíla Soraya"
-              allow="autoplay; encrypted-media"
-              tabindex="-1">
-            </iframe>
+              allow="autoplay; encrypted-media; picture-in-picture"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
 
             <span class="video-hover" aria-hidden="true">
               <span class="play-icon">▶</span>
@@ -103,22 +130,32 @@
           </button>
 
           <div class="project-info">
-            <div class="project-category">CAPTAÇÃO · EDIÇÃO · FINALIZAÇÃO</div>
+            <div class="project-category">
+              CAPTAÇÃO · EDIÇÃO · FINALIZAÇÃO
+            </div>
+
             <h3 class="project-title">Demoreel</h3>
+
             <p class="project-description">
               Meu trabalho em movimento. Uma seleção de projetos,
               técnicas e narrativas que representam meu olhar audiovisual.
             </p>
           </div>
+
         </article>
+
       </div>
     </div>
   </section>
 
+  <!-- CONTATO -->
   <section id="contato" class="contact reveal">
     <div class="section-container">
       <div class="contact-content">
-        <div class="section-label reveal-item">VAMOS CONVERSAR?</div>
+
+        <div class="section-label reveal-item">
+          VAMOS CONVERSAR?
+        </div>
 
         <h2 class="contact-title reveal-item">
           Vamos criar<br>
@@ -131,43 +168,72 @@
         </p>
 
         <div class="contact-links reveal-item">
-          <a href="https://www.instagram.com/ailasoraya/"
-             target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
 
-          <a href="https://wa.me/5511977682658"
-             target="_blank" rel="noopener noreferrer">WhatsApp <span>↗</span></a>
+          <a
+            href="https://www.instagram.com/ailasoraya/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram <span>↗</span>
+          </a>
 
-          <a href="mailto:ailagaraneesh@gmail.com">E-mail <span>↗</span></a>
+          <a
+            href="https://wa.me/5511977682658"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp <span>↗</span>
+          </a>
+
+          <a href="mailto:ailagaraneesh@gmail.com">
+            E-mail <span>↗</span>
+          </a>
+
         </div>
       </div>
     </div>
   </section>
+
 </main>
 
-<div id="playerGrandeOverlay"
-     class="video-overlay"
-     onclick="fecharPlayerGrande(event)"
-     aria-hidden="true">
+<!-- PLAYER AMPLIADO -->
+<div
+  id="playerGrandeOverlay"
+  class="video-overlay"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Demoreel de Aíla Soraya"
+  onclick="fecharPlayerGrande(event)"
+>
 
   <div class="video-modal-container">
-    <button type="button"
-            class="btn-fechar-modal"
-            onclick="fecharPlayerGrande(event)"
-            aria-label="Fechar vídeo">×</button>
+
+    <button
+      type="button"
+      class="btn-fechar-modal"
+      onclick="fecharPlayerGrande(event)"
+      aria-label="Fechar vídeo"
+    >×</button>
 
     <iframe
       id="videoExpandido"
       title="Demoreel de Aíla Soraya"
       src=""
       allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen>
-    </iframe>
+      allowfullscreen
+    ></iframe>
+
   </div>
 </div>
 
+<!-- RODAPÉ -->
 <footer>
   <div class="footer-content">
-    <a href="#inicio" class="footer-logo">AÍLA <span>SORAYA</span></a>
+    <a href="#inicio" class="footer-logo">
+      AÍLA <span>SORAYA</span>
+    </a>
+
     <p>© 2026 Aíla Soraya. Todos os direitos reservados.</p>
   </div>
 </footer>
@@ -175,34 +241,44 @@
 <script>
   const videoYouTube = "WFLGj0hIWlU";
 
-  function abrirPlayerGrande() {
-    const overlay = document.getElementById("playerGrandeOverlay");
-    const videoModal = document.getElementById("videoExpandido");
+  const overlay = document.getElementById("playerGrandeOverlay");
+  const videoModal = document.getElementById("videoExpandido");
 
+  // Abre o vídeo ampliado com controles e áudio disponível
+  function abrirPlayerGrande() {
     if (!overlay || !videoModal) return;
 
     videoModal.src =
       "https://www.youtube.com/embed/" + videoYouTube +
-      "?autoplay=1&controls=1&fs=1&playsinline=1&rel=0&loop=1&playlist=" +
-      videoYouTube;
+      "?autoplay=1" +
+      "&controls=1" +
+      "&playsinline=1" +
+      "&rel=0" +
+      "&loop=1" +
+      "&playlist=" + videoYouTube;
 
     overlay.style.display = "flex";
     overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+
+    const botaoFechar = overlay.querySelector(".btn-fechar-modal");
+    if (botaoFechar) botaoFechar.focus();
   }
 
+  // Fecha apenas ao clicar no fundo ou no botão de fechar
   function fecharPlayerGrande(event) {
-    if (
-      event.target.closest(".video-modal-container") &&
-      !event.target.classList.contains("btn-fechar-modal")
-    ) {
-      return;
-    }
-
-    const overlay = document.getElementById("playerGrandeOverlay");
-    const videoModal = document.getElementById("videoExpandido");
-
     if (!overlay || !videoModal) return;
+
+    if (event) {
+      const clicouNoBotaoFechar =
+        event.target.closest(".btn-fechar-modal");
+
+      const clicouNoFundo = event.target === overlay;
+
+      if (!clicouNoBotaoFechar && !clicouNoFundo) {
+        return;
+      }
+    }
 
     videoModal.src = "";
     overlay.style.display = "none";
@@ -210,21 +286,24 @@
     document.body.style.overflow = "";
   }
 
-  // Animação de entrada durante a rolagem
+  // Animação dos elementos durante a rolagem
   const elementosReveal = document.querySelectorAll(".reveal-item");
 
   if ("IntersectionObserver" in window) {
-    const observador = new IntersectionObserver((entradas, observer) => {
-      entradas.forEach((entrada) => {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add("is-visible");
-          observer.unobserve(entrada.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -35px 0px"
-    });
+    const observador = new IntersectionObserver(
+      (entradas, observer) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("is-visible");
+            observer.unobserve(entrada.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
 
     elementosReveal.forEach((elemento) => {
       observador.observe(elemento);
@@ -235,21 +314,23 @@
     });
   }
 
-  // Entrada inicial do nome, letra por letra
-  document.querySelectorAll(".hero-name span").forEach((linha) => {
+  // Nome com animação de entrada letra por letra
+  document.querySelectorAll(".hero-name > span").forEach((linha) => {
     const texto = linha.textContent.trim();
     linha.textContent = "";
 
     [...texto].forEach((letra, indice) => {
       const span = document.createElement("span");
+
       span.className = "hero-letter";
       span.textContent = letra === " " ? "\u00A0" : letra;
       span.style.animationDelay = (indice * 0.075) + "s";
+
       linha.appendChild(span);
     });
   });
 
-  // Respeita a preferência do visitante por menos movimento
+  // Respeita a preferência por menos movimento
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".hero-letter").forEach((letra) => {
       letra.style.animation = "none";
@@ -257,21 +338,17 @@
       letra.style.transform = "none";
     });
 
-    document.querySelectorAll(".reveal-item").forEach((elemento) => {
+    elementosReveal.forEach((elemento) => {
       elemento.classList.add("is-visible");
     });
   }
 
-  // Fechar o player com a tecla Escape
+  // Fecha o player com Escape
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      const overlay = document.getElementById("playerGrandeOverlay");
-      if (overlay && overlay.style.display === "flex") {
-        fecharPlayerGrande({
-          target: overlay,
-          preventDefault: () => {}
-        });
-      }
+    if (event.key === "Escape" && overlay.style.display === "flex") {
+      fecharPlayerGrande({
+        target: overlay
+      });
     }
   });
 </script>
