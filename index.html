@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./Css/Style.css">
 </head>
@@ -43,9 +43,13 @@
         <div class="about-grid">
 
           <div class="about-text">
-            <h1 class="hero-name">
-              <span>Aíla</span>
-              <span>Soraya</span>
+            <h1 class="hero-name" aria-label="Aíla Soraya">
+              <span class="name-line" aria-hidden="true">
+                <span class="name-word" data-word="Aíla">Aíla</span>
+              </span>
+              <span class="name-line" aria-hidden="true">
+                <span class="name-word" data-word="Soraya">Soraya</span>
+              </span>
             </h1>
 
             <p class="subtitle reveal-item">
@@ -264,6 +268,7 @@
     document.getElementById("ano").textContent =
       new Date().getFullYear();
 
+    /* ANIMAÇÕES DE ENTRADA */
     const elementosReveal =
       document.querySelectorAll(".reveal-item");
 
@@ -283,12 +288,42 @@
       elementosReveal.forEach((elemento) => {
         observador.observe(elemento);
       });
-
     } else {
       elementosReveal.forEach((elemento) => {
         elemento.classList.add("is-visible");
       });
     }
+
+    /* NOME COM ENTRADA LETRA POR LETRA */
+    const palavrasNome =
+      document.querySelectorAll(".name-word");
+
+    palavrasNome.forEach((palavra, indicePalavra) => {
+      const texto = palavra.dataset.word;
+
+      palavra.textContent = "";
+
+      [...texto].forEach((letra, indiceLetra) => {
+        const span = document.createElement("span");
+
+        span.className = "name-letter";
+        span.textContent = letra;
+        span.style.setProperty(
+          "--letter-delay",
+          `${0.35 + indicePalavra * 0.45 + indiceLetra * 0.075}s`
+        );
+
+        span.setAttribute("aria-hidden", "true");
+        palavra.appendChild(span);
+      });
+
+      palavra.classList.add("name-word-animated");
+    });
+
+    /* MOSTRA AS LETRAS DEPOIS QUE A PÁGINA CARREGA */
+    window.addEventListener("load", () => {
+      document.body.classList.add("page-loaded");
+    });
   </script>
 
 </body>
