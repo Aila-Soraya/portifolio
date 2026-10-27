@@ -3,355 +3,225 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="Aíla Soraya — Videomaker e Filmmaker. Produção audiovisual, edição, captação e motion design.">
+  <meta name="description" content="Portfólio audiovisual de Aíla Soraya, videomaker e filmmaker.">
   <title>Aíla Soraya | Videomaker & Filmmaker</title>
   <link rel="stylesheet" href="./Css/Style.css">
 </head>
-
 <body>
 
-<header>
-  <nav>
-    <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Navegação principal">
+      <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
 
-    <div class="nav-links">
-      <a href="#inicio">Quem Sou</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#contato">Contato</a>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-  <!-- QUEM SOU -->
-  <section id="inicio" class="about reveal">
-    <div class="about-background" aria-hidden="true"></div>
-
-    <div class="section-container">
-      <div class="section-label reveal-item">BIOGRAFIA</div>
-
-      <div class="about-grid">
-
-        <div class="about-text">
-          <h1 class="hero-name">
-            <span>Aíla</span>
-            <span>Soraya</span>
-          </h1>
-
-          <p class="subtitle reveal-item">
-            Videomaker <span>·</span> Filmmaker
-          </p>
-
-          <p class="description reveal-item">
-            Videomaker e filmmaker com foco em produção de conteúdo
-            audiovisual para redes sociais. Trabalho com captação,
-            edição e finalização de vídeos rápidos, cortes e conteúdos
-            pensados para gerar impacto e retenção nas plataformas
-            digitais. Também atuo na produção e cobertura audiovisual
-            de eventos, além de podcasts e projetos de diferentes
-            segmentos. Minha experiência une produção e pós-produção
-            para transformar ideias e momentos em conteúdos dinâmicos,
-            profissionais e prontos para as redes.
-          </p>
-
-          <a href="#portfolio" class="text-link reveal-item">
-            CONHEÇA MEU TRABALHO
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-
-        <div class="about-image reveal-item">
-          <div class="portrait-frame">
-            <img
-              src="./Fotos/Soraya.png"
-              alt="Retrato de Aíla Soraya"
-            >
-          </div>
-
-          <span class="image-caption">
-            AÍLA SORAYA — AUDIOVISUAL
-          </span>
-        </div>
-
+      <div class="nav-links">
+        <a href="#inicio">Quem sou</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
       </div>
-    </div>
-  </section>
+    </nav>
+  </header>
 
-  <!-- PORTFÓLIO -->
-  <section id="portfolio" class="portfolio reveal">
-    <div class="section-container">
+  <main>
+    <section id="inicio" class="about">
+      <div class="about-background" aria-hidden="true"></div>
 
-      <div class="section-label reveal-item">
-        PROJETO EM DESTAQUE
-      </div>
+      <div class="section-container">
+        <p class="section-label reveal-item">QUEM SOU</p>
 
-      <div class="portfolio-heading reveal-item">
-        <h2 class="section-title">
-          Meu universo<br>
-          <span>audiovisual.</span>
-        </h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <h1 class="hero-name">
+              <span>Aíla</span>
+              <span>Soraya</span>
+            </h1>
 
-        <p class="portfolio-intro">
-          Um pouco do meu olhar, da minha técnica e da minha forma
-          de contar histórias.
-        </p>
-      </div>
-
-      <div class="portfolio-grid">
-
-        <article class="project reveal-item">
-
-          <!-- Prévia em looping, sem som -->
-          <button
-            type="button"
-            class="project-video"
-            aria-label="Abrir demoreel com áudio e controles"
-            onclick="abrirPlayerGrande()"
-          >
-
-            <iframe
-              class="video-clicavel"
-              src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1&rel=0"
-              title="Prévia do demoreel de Aíla Soraya"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              tabindex="-1"
-              aria-hidden="true"
-            ></iframe>
-
-            <span class="video-hover" aria-hidden="true">
-              <span class="play-icon">▶</span>
-              <span class="play-label">ASSISTIR DEMOREEL</span>
-            </span>
-
-            <span class="video-index">SHOWREEL / 2026</span>
-          </button>
-
-          <div class="project-info">
-            <div class="project-category">
-              CAPTAÇÃO · EDIÇÃO · FINALIZAÇÃO
-            </div>
-
-            <h3 class="project-title">Demoreel</h3>
-
-            <p class="project-description">
-              Meu trabalho em movimento. Uma seleção de projetos,
-              técnicas e narrativas que representam meu olhar audiovisual.
+            <p class="subtitle reveal-item">
+              Videomaker <span>·</span> Filmmaker
             </p>
+
+            <p class="description reveal-item">
+              Trabalho com produção audiovisual para redes sociais,
+              captação, edição e finalização de vídeos, cortes,
+              eventos e podcasts. Transformo ideias em conteúdos
+              audiovisuais dinâmicos, com atenção à narrativa,
+              ao ritmo e à identidade de cada projeto.
+            </p>
+
+            <a href="#portfolio" class="text-link reveal-item">
+              CONHEÇA MEU TRABALHO <span>↗</span>
+            </a>
           </div>
 
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" class="contact reveal">
-    <div class="section-container">
-      <div class="contact-content">
-
-        <div class="section-label reveal-item">
-          VAMOS CONVERSAR?
+          <div class="about-image reveal-item">
+            <div class="portrait-frame">
+              <img
+                src="./Fotos/Soraya.png"
+                alt="Retrato de Aíla Soraya"
+                loading="eager"
+              >
+            </div>
+            <p class="image-caption">AÍLA SORAYA — AUDIOVISUAL</p>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <section id="portfolio" class="portfolio">
+      <div class="section-container">
+        <p class="section-label reveal-item">TRABALHOS SELECIONADOS</p>
+        <h2 class="section-title reveal-item">Portfólio<span>.</span></h2>
+
+        <div class="portfolio-grid">
+          <article class="project reveal-item">
+            <button
+              type="button"
+              class="project-video"
+              onclick="abrirPlayerGrande()"
+              aria-label="Assistir ao demoreel em tamanho ampliado"
+            >
+              <iframe
+                class="video-clicavel"
+                src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&mute=1&loop=1&playlist=WFLGj0hIWlU&controls=0&playsinline=1&rel=0"
+                title="Demoreel de Aíla Soraya"
+                loading="lazy"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                tabindex="-1"
+              ></iframe>
+
+              <span class="video-hover">
+                <span class="play-icon">▶</span>
+                <span class="play-label">ASSISTIR DEMOREEL</span>
+              </span>
+
+              <span class="video-index">SHOWREEL / 2026</span>
+            </button>
+
+            <div class="project-info">
+              <p class="project-category">AUDIOVISUAL</p>
+              <h3 class="project-title">Demoreel</h3>
+              <p class="project-description">
+                Uma seleção de trabalhos em captação, edição
+                e produção audiovisual.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div class="section-container contact-content">
+        <p class="section-label reveal-item">VAMOS CONVERSAR</p>
         <h2 class="contact-title reveal-item">
-          Vamos criar<br>
-          algo <span>juntos?</span>
+          Seu projeto<br><span>começa aqui.</span>
         </h2>
 
         <p class="contact-text reveal-item">
-          Tem um projeto audiovisual em mente ou precisa de uma produção?
-          Entre em contato.
+          Entre em contato para conversar sobre seu próximo projeto audiovisual.
         </p>
 
         <div class="contact-links reveal-item">
-
-          <a
-            href="https://www.instagram.com/ailasoraya/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram <span>↗</span>
-          </a>
-
-          <a
-            href="https://wa.me/5511977682658"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp <span>↗</span>
-          </a>
-
-          <a href="mailto:ailagaraneesh@gmail.com">
-            E-mail <span>↗</span>
-          </a>
-
+          <a href="mailto:ailagaraneesh@gmail.com">E-mail</a>
+          <a href="https://wa.me/5511977682658" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/ailasoraya/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <a href="#inicio" class="footer-logo">AÍLA <span>SORAYA</span></a>
+      <p>© <span id="ano"></span> Aíla Soraya. Todos os direitos reservados.</p>
     </div>
-  </section>
+  </footer>
 
-</main>
+  <div
+    id="playerGrandeOverlay"
+    class="video-overlay"
+    aria-hidden="true"
+    onclick="fecharPlayerGrande(event)"
+  >
+    <div
+      class="video-modal-container"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Demoreel ampliado"
+    >
+      <button
+        type="button"
+        class="btn-fechar-modal"
+        onclick="fecharPlayerGrande(event)"
+        aria-label="Fechar vídeo"
+      >×</button>
 
-<!-- PLAYER AMPLIADO -->
-<div
-  id="playerGrandeOverlay"
-  class="video-overlay"
-  aria-hidden="true"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Demoreel de Aíla Soraya"
-  onclick="fecharPlayerGrande(event)"
->
-
-  <div class="video-modal-container">
-
-    <button
-      type="button"
-      class="btn-fechar-modal"
-      onclick="fecharPlayerGrande(event)"
-      aria-label="Fechar vídeo"
-    >×</button>
-
-    <iframe
-      id="videoExpandido"
-      title="Demoreel de Aíla Soraya"
-      src=""
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen
-    ></iframe>
-
+      <iframe
+        id="videoExpandido"
+        src=""
+        title="Demoreel de Aíla Soraya"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
-</div>
 
-<!-- RODAPÉ -->
-<footer>
-  <div class="footer-content">
-    <a href="#inicio" class="footer-logo">
-      AÍLA <span>SORAYA</span>
-    </a>
+  <script>
+    const videoYouTube = "WFLGj0hIWlU";
+    const overlay = document.getElementById("playerGrandeOverlay");
+    const videoModal = document.getElementById("videoExpandido");
 
-    <p>© 2026 Aíla Soraya. Todos os direitos reservados.</p>
-  </div>
-</footer>
+    function abrirPlayerGrande() {
+      videoModal.src =
+        "https://www.youtube.com/embed/" + videoYouTube +
+        "?autoplay=1&controls=1&playsinline=1&rel=0&fs=1";
 
-<script>
-  const videoYouTube = "WFLGj0hIWlU";
-
-  const overlay = document.getElementById("playerGrandeOverlay");
-  const videoModal = document.getElementById("videoExpandido");
-
-  // Abre o vídeo ampliado com controles e áudio disponível
-  function abrirPlayerGrande() {
-    if (!overlay || !videoModal) return;
-
-    videoModal.src =
-      "https://www.youtube.com/embed/" + videoYouTube +
-      "?autoplay=1" +
-      "&controls=1" +
-      "&playsinline=1" +
-      "&rel=0" +
-      "&loop=1" +
-      "&playlist=" + videoYouTube;
-
-    overlay.style.display = "flex";
-    overlay.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-
-    const botaoFechar = overlay.querySelector(".btn-fechar-modal");
-    if (botaoFechar) botaoFechar.focus();
-  }
-
-  // Fecha apenas ao clicar no fundo ou no botão de fechar
-  function fecharPlayerGrande(event) {
-    if (!overlay || !videoModal) return;
-
-    if (event) {
-      const clicouNoBotaoFechar =
-        event.target.closest(".btn-fechar-modal");
-
-      const clicouNoFundo = event.target === overlay;
-
-      if (!clicouNoBotaoFechar && !clicouNoFundo) {
-        return;
-      }
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-aberto");
     }
 
-    videoModal.src = "";
-    overlay.style.display = "none";
-    overlay.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
+    function fecharPlayerGrande(event) {
+      if (
+        event &&
+        event.target !== overlay &&
+        !event.target.closest(".btn-fechar-modal")
+      ) {
+        return;
+      }
 
-  // Animação dos elementos durante a rolagem
-  const elementosReveal = document.querySelectorAll(".reveal-item");
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      videoModal.src = "";
+      document.body.classList.remove("modal-aberto");
+    }
 
-  if ("IntersectionObserver" in window) {
-    const observador = new IntersectionObserver(
-      (entradas, observer) => {
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+        fecharPlayerGrande({ target: overlay });
+      }
+    });
+
+    document.getElementById("ano").textContent = new Date().getFullYear();
+
+    const elementosReveal = document.querySelectorAll(".reveal-item");
+
+    if ("IntersectionObserver" in window) {
+      const observador = new IntersectionObserver((entradas, observer) => {
         entradas.forEach((entrada) => {
           if (entrada.isIntersecting) {
             entrada.target.classList.add("is-visible");
             observer.unobserve(entrada.target);
           }
         });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
-    );
+      }, { threshold: 0.12 });
 
-    elementosReveal.forEach((elemento) => {
-      observador.observe(elemento);
-    });
-  } else {
-    elementosReveal.forEach((elemento) => {
-      elemento.classList.add("is-visible");
-    });
-  }
-
-  // Nome com animação de entrada letra por letra
-  document.querySelectorAll(".hero-name > span").forEach((linha) => {
-    const texto = linha.textContent.trim();
-    linha.textContent = "";
-
-    [...texto].forEach((letra, indice) => {
-      const span = document.createElement("span");
-
-      span.className = "hero-letter";
-      span.textContent = letra === " " ? "\u00A0" : letra;
-      span.style.animationDelay = (indice * 0.075) + "s";
-
-      linha.appendChild(span);
-    });
-  });
-
-  // Respeita a preferência por menos movimento
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.querySelectorAll(".hero-letter").forEach((letra) => {
-      letra.style.animation = "none";
-      letra.style.opacity = "1";
-      letra.style.transform = "none";
-    });
-
-    elementosReveal.forEach((elemento) => {
-      elemento.classList.add("is-visible");
-    });
-  }
-
-  // Fecha o player com Escape
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && overlay.style.display === "flex") {
-      fecharPlayerGrande({
-        target: overlay
-      });
+      elementosReveal.forEach((elemento) => observador.observe(elemento));
+    } else {
+      elementosReveal.forEach((elemento) => elemento.classList.add("is-visible"));
     }
-  });
-</script>
+  </script>
 
 </body>
 </html>
