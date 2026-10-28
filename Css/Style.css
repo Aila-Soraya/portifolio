@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: "Aisling Logo";
- src: url("../Fonts/Aisling-Logo.otf") format("opentype");
-  font-weight: 400;
+  src: url("../Fonts/Aisling-Logo.otf") format("opentype");
+  font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
