@@ -1065,3 +1065,6 @@ section {
     filter: none;
   }
 }
+.hero-name .name-letter {
+  margin-right: 0.08em;
+}
