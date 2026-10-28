@@ -1063,3 +1063,13 @@ section {
 .hero-name .name-letter {
   margin-right: 0.08em;
 }
+
+/* Centralizar o título Portfólio */
+#portfolio > h2,
+#portfolio .section-title {
+  text-align: center;
+  width: 100%;
+}
+
+/* Ocultar o texto "Trabalhos selecionados" */
+
