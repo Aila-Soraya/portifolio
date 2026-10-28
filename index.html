@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./Css/Style.css">
 </head>
@@ -106,9 +106,10 @@
               aria-label="Assistir ao demoreel em tamanho ampliado"
             >
 
+              <!-- MINIATURA: LOOPING SILENCIOSO -->
               <iframe
                 class="video-clicavel"
-                src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0"
+                src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0&amp;vq=hd1080"
                 title="Demoreel de Aíla Soraya"
                 loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture"
@@ -223,7 +224,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-const videoYouTube = "lMs--LQYMFQ";
+    const videoYouTube = "lMs--LQYMFQ";
     const overlay = document.getElementById("playerGrandeOverlay");
     const videoModal = document.getElementById("videoExpandido");
 
@@ -231,7 +232,12 @@ const videoYouTube = "lMs--LQYMFQ";
       videoModal.src =
         "https://www.youtube.com/embed/" +
         videoYouTube +
-        "?autoplay=1&controls=1&playsinline=1&rel=0&fs=1";
+        "?autoplay=1" +
+        "&controls=1" +
+        "&playsinline=1" +
+        "&rel=0" +
+        "&fs=1" +
+        "&vq=hd1080";
 
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
@@ -250,6 +256,7 @@ const videoYouTube = "lMs--LQYMFQ";
       overlay.classList.remove("is-open");
       overlay.setAttribute("aria-hidden", "true");
 
+      // Interrompe a reprodução ao fechar o player.
       videoModal.src = "";
 
       document.body.classList.remove("modal-aberto");
@@ -327,3 +334,4 @@ const videoYouTube = "lMs--LQYMFQ";
 
 </body>
 </html>
+```
