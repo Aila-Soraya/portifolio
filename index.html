@@ -3,27 +3,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111212">
-  <meta name="description" content="Portfólio audiovisual de Aíla Soraya, videomaker e filmmaker.">
-
   <title>Aíla Soraya | Videomaker &amp; Filmmaker</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="./Css/Style.css">
 </head>
-
 <body>
+
   <header class="site-header">
     <nav class="nav-container" aria-label="Navegação principal">
       <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
-
       <div class="nav-links">
         <a href="#inicio">Quem sou</a>
         <a href="#portfolio">Portfólio</a>
+        <a href="#softwares">Softwares</a>
         <a href="#contato">Contato</a>
       </div>
     </nav>
@@ -32,31 +28,22 @@
   <main>
     <section id="inicio" class="about">
       <div class="about-background" aria-hidden="true"></div>
-
       <div class="section-container">
-        <p class="section-label reveal-item">QUEM SOU</p>
+        <p class="section-label reveal-item">Biografia</p>
 
         <div class="about-grid">
           <div class="about-text">
             <h1 class="hero-name" aria-label="Aíla Soraya">
-              <span class="name-line" aria-hidden="true">
-                <span class="name-word" data-word="Aíla">Aíla</span>
-              </span>
-              <span class="name-line" aria-hidden="true">
-                <span class="name-word" data-word="Soraya">Soraya</span>
-              </span>
+              <span class="name-line" data-line="AÍLA"></span>
+              <span class="name-line" data-line="SORAYA"></span>
             </h1>
 
             <p class="subtitle reveal-item">
-              Videomaker <span>·</span> Filmmaker
+              Videomaker <span>•</span> Filmmaker
             </p>
 
             <p class="description reveal-item">
-              Trabalho com produção audiovisual para redes sociais,
-              captação, edição e finalização de vídeos, cortes,
-              eventos e podcasts. Transformo ideias em conteúdos
-              audiovisuais dinâmicos, com atenção à narrativa,
-              ao ritmo e à identidade de cada projeto.
+              Videomaker e filmmaker com foco em produção de conteúdo audiovisual para redes sociais. Trabalho com captação, edição e finalização de vídeos rápidos, cortes e conteúdos pensados para gerar impacto e retenção nas plataformas digitais. Também atuo na produção e cobertura audiovisual de eventos, além de podcasts e projetos de diferentes segmentos. Minha experiência une produção e pós-produção para transformar ideias e momentos em conteúdos dinâmicos, profissionais e prontos para as redes.
             </p>
 
             <a href="#portfolio" class="text-link reveal-item">
@@ -66,13 +53,8 @@
 
           <div class="about-image reveal-item">
             <div class="portrait-frame">
-              <img
-                src="./Fotos/soraya-perfil.jpg"
-                alt="Retrato de Aíla Soraya"
-                loading="eager"
-              >
+              <img src="./Fotos/soraya-perfil.jpg" alt="Retrato de Aíla Soraya" loading="eager">
             </div>
-
             <p class="image-caption">AÍLA SORAYA — AUDIOVISUAL</p>
           </div>
         </div>
@@ -81,66 +63,150 @@
 
     <section id="portfolio" class="portfolio">
       <div class="section-container">
-        <h2 class="section-title portfolio-heading reveal-item">
-          Portfólio<span>.</span>
-        </h2>
+        <p class="section-label reveal-item">Projetos selecionados</p>
+        <h2 class="portfolio-heading reveal-item">PORTFÓLIO<span>.</span></h2>
 
         <div class="portfolio-grid">
+
           <article class="project reveal-item">
-            <button
-              type="button"
-              class="project-video"
-              onclick="abrirPlayerGrande()"
-              aria-label="Assistir ao demoreel em tamanho ampliado"
-            >
+            <div class="project-media window-placeholder">
+              <img src="./Fotos/soraya-perfil.jpg" alt="" class="bg-blur" loading="lazy">
+              <div class="status-overlay">
+                <span class="status-badge">EM BREVE</span>
+                <p>Roteirização e direção de linha editorial</p>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <p class="project-category">PRÉ-PRODUÇÃO &amp; ESTRATÉGIA</p>
+              <h3 class="project-title">PRÉ-PRODUÇÃO &amp; ESTRATÉGIA</h3>
+
+              <div class="expertise-tags">
+                <span class="tag">Roteirização de Cortes</span>
+                <span class="tag">Estratégia de Retenção</span>
+                <span class="tag">Conceito de Cenário</span>
+                <span class="tag">Briefing de Convidados</span>
+                <span class="tag">Linha Editorial</span>
+              </div>
+
+              <p class="project-description">
+                Planejamento e preparação minuciosa para podcasts e canais de cortes. Desenvolvo a estrutura ideal e o roteiro estratégico para garantir que o conteúdo seja magnético antes mesmo de ligar os microfones.
+              </p>
+            </div>
+          </article>
+
+          <article class="project reveal-item">
+            <div class="project-video">
               <iframe
                 class="video-clicavel"
-                src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0"
+                src="https://www.youtube.com/embed/WFLGj0hIWlU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=WFLGj0hIWlU&amp;controls=0&amp;playsinline=1&amp;rel=0"
                 title="Demoreel de Aíla Soraya"
                 loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture"
-                tabindex="-1"
-              ></iframe>
+                tabindex="-1">
+              </iframe>
 
-              <span class="video-hover">
+              <button
+                type="button"
+                class="video-card-click"
+                aria-label="Abrir demoreel com som"
+                onclick="abrirPlayerGrande()">
+              </button>
+
+              <div class="video-hover" aria-hidden="true">
                 <span class="play-icon">▶</span>
-                <span class="play-label">ASSISTIR DEMOREEL</span>
-              </span>
+                <span class="play-label">ASSISTIR COM SOM</span>
+              </div>
 
-              <span class="video-index">SHOWREEL / 2026</span>
-            </button>
+              <span class="video-index">SHOWREEL / AUDIOVISUAL</span>
+            </div>
+
+            <div class="project-info">
+              <p class="project-category">PRODUÇÃO &amp; CAPTAÇÃO</p>
+              <h3 class="project-title">PRODUÇÃO &amp; CAPTAÇÃO</h3>
+
+              <div class="expertise-tags">
+                <span class="tag">Gravação Multicâmera</span>
+                <span class="tag">Direção de Podcasts</span>
+                <span class="tag">Operação de Câmera</span>
+                <span class="tag">Iluminação de Estúdio</span>
+                <span class="tag">Captação de Áudio</span>
+              </div>
+
+              <p class="project-description">
+                Captação audiovisual profissional com foco em mesas de podcast, talk-shows e conteúdos para internet, garantindo enquadramentos dinâmicos e áudio impecável no set.
+              </p>
+            </div>
           </article>
+
+          <article class="project reveal-item">
+            <div class="project-media window-placeholder">
+              <img src="./Fotos/soraya-perfil.jpg" alt="" class="bg-blur" loading="lazy">
+              <div class="status-overlay">
+                <span class="status-badge">EM BREVE</span>
+                <p>Showreel de edição avançada e motion em desenvolvimento</p>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <p class="project-category">PÓS-PRODUÇÃO &amp; FINALIZAÇÃO</p>
+              <h3 class="project-title">PÓS-PRODUÇÃO &amp; FINALIZAÇÃO</h3>
+
+              <div class="expertise-tags">
+                <span class="tag">Edição de Podcasts</span>
+                <span class="tag">Cortes de Alta Retenção</span>
+                <span class="tag">Color Grading</span>
+                <span class="tag">Motion &amp; Legendas Animadas</span>
+                <span class="tag">Sound Design &amp; Mixagem</span>
+                <span class="tag">Identidade Visual de Canais</span>
+                <span class="tag">Masterização Multiplataforma</span>
+              </div>
+
+              <p class="project-description">
+                Onde a mágica acontece. Transformo gravações brutas em episódios fluidos e cortes altamente virais. Cuido desde a engenharia de áudio e sincronia multicâmera até o tratamento de cor e inserção de legendas dinâmicas.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="softwares" class="work-process">
+      <div class="section-container">
+        <p class="section-label reveal-item">Ferramentas de ecossistema</p>
+        <h2 class="section-title reveal-item">SOFTWARES<span>.</span></h2>
+
+        <div class="softwares-grid">
+          <div class="software-item reveal-item"><span>Adobe Premiere Pro</span></div>
+          <div class="software-item reveal-item"><span>Adobe After Effects</span></div>
+          <div class="software-item reveal-item"><span>DaVinci Resolve</span></div>
+          <div class="software-item reveal-item"><span>Adobe Audition</span></div>
+          <div class="software-item reveal-item"><span>Adobe Photoshop</span></div>
+          <div class="software-item reveal-item"><span>Adobe Illustrator</span></div>
+          <div class="software-item reveal-item"><span>CapCut Pro</span></div>
         </div>
       </div>
     </section>
 
     <section id="contato" class="contact">
-      <div class="section-container contact-content">
-        <p class="section-label reveal-item">VAMOS CONVERSAR</p>
+      <div class="section-container">
+        <div class="contact-content">
+          <p class="section-label reveal-item">Contato</p>
 
-        <h2 class="contact-title reveal-item">
-          Seu projeto<br>
-          <span>começa aqui.</span>
-        </h2>
+          <h2 class="contact-title reveal-item">
+            VAMOS CRIAR<br>ALGO <span>JUNTOS?</span>
+          </h2>
 
-        <p class="contact-text reveal-item">
-          Entre em contato para conversar sobre seu próximo projeto audiovisual.
-        </p>
+          <p class="contact-text reveal-item">
+            Tem um projeto audiovisual em mente ou precisa de uma produção? Entre em contato agora.
+          </p>
 
-        <div class="contact-links reveal-item">
-          <a href="mailto:ailagaraneesh@gmail.com">E-mail</a>
-
-          <a
-            href="https://wa.me/5511977682658"
-            target="_blank"
-            rel="noopener noreferrer"
-          >WhatsApp</a>
-
-          <a
-            href="https://www.instagram.com/ailasoraya/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Instagram</a>
+          <div class="contact-links reveal-item">
+            <a href="https://www.instagram.com/ailasoraya/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/5511977682658" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:ailagaraneesh@gmail.com">E-mail</a>
+          </div>
         </div>
       </div>
     </section>
@@ -148,13 +214,8 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <a href="#inicio" class="footer-logo">
-        AÍLA <span>SORAYA</span>
-      </a>
-
-      <p>
-        © <span id="ano"></span> Aíla Soraya. Todos os direitos reservados.
-      </p>
+      <a href="#inicio" class="footer-logo">AÍLA <span>SORAYA</span></a>
+      <p>© <span id="ano">2026</span> Aíla Soraya. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -162,55 +223,95 @@
     id="playerGrandeOverlay"
     class="video-overlay"
     aria-hidden="true"
-    onclick="fecharPlayerGrande(event)"
-  >
-    <div
-      class="video-modal-container"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Demoreel ampliado"
-    >
+    onclick="fecharPlayerGrande(event)">
+
+    <div class="video-modal-container" role="dialog" aria-modal="true" aria-label="Demoreel ampliado">
       <button
         type="button"
         class="btn-fechar-modal"
         onclick="fecharPlayerGrande(event)"
-        aria-label="Fechar vídeo"
-      >×</button>
+        aria-label="Fechar vídeo">×</button>
 
       <iframe
         id="videoExpandido"
         src=""
         title="Demoreel de Aíla Soraya"
         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 
   <script>
-    const videoYouTube = "lMs--LQYMFQ";
+    const videoYouTube = "WFLGj0hIWlU";
     const overlay = document.getElementById("playerGrandeOverlay");
     const videoModal = document.getElementById("videoExpandido");
 
+    // Anima o nome letra por letra.
+    document.querySelectorAll(".name-line[data-line]").forEach((line, lineIndex) => {
+      const text = line.dataset.line || "";
+
+      [...text].forEach((letter, letterIndex) => {
+        const span = document.createElement("span");
+        span.className = "name-letter";
+        span.textContent = letter;
+        span.style.setProperty(
+          "--letter-delay",
+          `${0.25 + lineIndex * 0.45 + letterIndex * 0.075}s`
+        );
+        line.appendChild(span);
+      });
+    });
+
+    // Ativa a animação inicial após carregar a página.
+    window.addEventListener("load", () => {
+      document.body.classList.add("page-loaded");
+    });
+
+    // Faz os elementos aparecerem suavemente ao entrar na tela.
+    const revealItems = document.querySelectorAll(".reveal-item");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    // Atualiza o ano do rodapé.
+    document.getElementById("ano").textContent = new Date().getFullYear();
+
+    // Abre o vídeo ampliado com som e controles.
     function abrirPlayerGrande() {
+      if (!overlay || !videoModal) return;
+
       videoModal.src =
-        "https://www.youtube.com/embed/" +
-        videoYouTube +
-        "?autoplay=1&controls=1&playsinline=1&rel=0&fs=1";
+        "https://www.youtube.com/embed/" + videoYouTube +
+        "?autoplay=1&controls=1&fs=1&playsinline=1&rel=0";
 
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-aberto");
     }
 
+    // Fecha o player ao clicar fora dele ou no botão X.
     function fecharPlayerGrande(event) {
-      if (
-        event &&
-        event.target !== overlay &&
-        !event.target.closest(".btn-fechar-modal")
-      ) {
-        return;
+      if (event) {
+        const clicouNoBotao = event.target.closest(".btn-fechar-modal");
+        const clicouFora = event.target === overlay;
+
+        if (!clicouNoBotao && !clicouFora) return;
       }
+
+      if (!overlay || !videoModal) return;
 
       overlay.classList.remove("is-open");
       overlay.setAttribute("aria-hidden", "true");
@@ -218,72 +319,11 @@
       document.body.classList.remove("modal-aberto");
     }
 
-    document.addEventListener("keydown", function(event) {
-      if (
-        event.key === "Escape" &&
-        overlay.classList.contains("is-open")
-      ) {
-        fecharPlayerGrande({ target: overlay });
+    // A tecla Esc também fecha o player.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+        fecharPlayerGrande();
       }
-    });
-
-    document.getElementById("ano").textContent =
-      new Date().getFullYear();
-
-    /* ANIMAÇÕES DE ENTRADA */
-    const elementosReveal =
-      document.querySelectorAll(".reveal-item");
-
-    if ("IntersectionObserver" in window) {
-      const observador = new IntersectionObserver(
-        (entradas, observer) => {
-          entradas.forEach((entrada) => {
-            if (entrada.isIntersecting) {
-              entrada.target.classList.add("is-visible");
-              observer.unobserve(entrada.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-
-      elementosReveal.forEach((elemento) => {
-        observador.observe(elemento);
-      });
-    } else {
-      elementosReveal.forEach((elemento) => {
-        elemento.classList.add("is-visible");
-      });
-    }
-
-    /* NOME ANIMADO LETRA POR LETRA */
-    const palavrasNome =
-      document.querySelectorAll(".name-word");
-
-    palavrasNome.forEach((palavra, indicePalavra) => {
-      const texto = palavra.dataset.word;
-      palavra.textContent = "";
-
-      [...texto].forEach((letra, indiceLetra) => {
-        const span = document.createElement("span");
-
-        span.className = "name-letter";
-        span.textContent = letra;
-
-        span.style.setProperty(
-          "--letter-delay",
-          `${0.35 + indicePalavra * 0.45 + indiceLetra * 0.075}s`
-        );
-
-        span.setAttribute("aria-hidden", "true");
-        palavra.appendChild(span);
-      });
-
-      palavra.classList.add("name-word-animated");
-    });
-
-    window.addEventListener("load", () => {
-      document.body.classList.add("page-loaded");
     });
   </script>
 </body>
