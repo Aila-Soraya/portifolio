@@ -14,45 +14,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./Css/Style.css">
-
-  <style>
-    /* PORTFÓLIO */
-    #portfolio .portfolio-heading {
-      display: block;
-      width: 100%;
-      margin: 0 auto 48px;
-      text-align: center !important;
-    }
-
-    #portfolio .portfolio-grid {
-      width: 100%;
-    }
-
-    /* PLAYER AMPLIADO */
-    .video-overlay {
-      display: none;
-    }
-
-    .video-overlay.is-open {
-      display: flex;
-    }
-
-    body.modal-aberto {
-      overflow: hidden;
-    }
-
-    #videoExpandido {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
 </head>
 
 <body>
-
-  <!-- MENU -->
   <header class="site-header">
     <nav class="nav-container" aria-label="Navegação principal">
       <a href="#inicio" class="logo">AÍLA <span>SORAYA</span></a>
@@ -66,8 +30,6 @@
   </header>
 
   <main>
-
-    <!-- QUEM SOU -->
     <section id="inicio" class="about">
       <div class="about-background" aria-hidden="true"></div>
 
@@ -75,7 +37,6 @@
         <p class="section-label reveal-item">QUEM SOU</p>
 
         <div class="about-grid">
-
           <div class="about-text">
             <h1 class="hero-name" aria-label="Aíla Soraya">
               <span class="name-line" aria-hidden="true">
@@ -114,21 +75,17 @@
 
             <p class="image-caption">AÍLA SORAYA — AUDIOVISUAL</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- PORTFÓLIO -->
     <section id="portfolio" class="portfolio">
       <div class="section-container">
-
         <h2 class="section-title portfolio-heading reveal-item">
           Portfólio<span>.</span>
         </h2>
 
         <div class="portfolio-grid">
-
           <article class="project reveal-item">
             <button
               type="button"
@@ -136,8 +93,6 @@
               onclick="abrirPlayerGrande()"
               aria-label="Assistir ao demoreel em tamanho ampliado"
             >
-
-              <!-- VÍDEO EM LOOPING SILENCIOSO -->
               <iframe
                 class="video-clicavel"
                 src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0"
@@ -153,18 +108,14 @@
               </span>
 
               <span class="video-index">SHOWREEL / 2026</span>
-
             </button>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato" class="contact">
       <div class="section-container contact-content">
-
         <p class="section-label reveal-item">VAMOS CONVERSAR</p>
 
         <h2 class="contact-title reveal-item">
@@ -177,37 +128,26 @@
         </p>
 
         <div class="contact-links reveal-item">
-
-          <a href="mailto:ailagaraneesh@gmail.com">
-            E-mail
-          </a>
+          <a href="mailto:ailagaraneesh@gmail.com">E-mail</a>
 
           <a
             href="https://wa.me/5511977682658"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
+          >WhatsApp</a>
 
           <a
             href="https://www.instagram.com/ailasoraya/"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-
+          >Instagram</a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- RODAPÉ -->
   <footer class="site-footer">
     <div class="footer-content">
-
       <a href="#inicio" class="footer-logo">
         AÍLA <span>SORAYA</span>
       </a>
@@ -215,25 +155,21 @@
       <p>
         © <span id="ano"></span> Aíla Soraya. Todos os direitos reservados.
       </p>
-
     </div>
   </footer>
 
-  <!-- PLAYER AMPLIADO -->
   <div
     id="playerGrandeOverlay"
     class="video-overlay"
     aria-hidden="true"
     onclick="fecharPlayerGrande(event)"
   >
-
     <div
       class="video-modal-container"
       role="dialog"
       aria-modal="true"
       aria-label="Demoreel ampliado"
     >
-
       <button
         type="button"
         class="btn-fechar-modal"
@@ -248,11 +184,9 @@
         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
         allowfullscreen
       ></iframe>
-
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
     const videoYouTube = "lMs--LQYMFQ";
     const overlay = document.getElementById("playerGrandeOverlay");
@@ -262,11 +196,7 @@
       videoModal.src =
         "https://www.youtube.com/embed/" +
         videoYouTube +
-        "?autoplay=1" +
-        "&controls=1" +
-        "&playsinline=1" +
-        "&rel=0" +
-        "&fs=1";
+        "?autoplay=1&controls=1&playsinline=1&rel=0&fs=1";
 
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
@@ -332,7 +262,6 @@
 
     palavrasNome.forEach((palavra, indicePalavra) => {
       const texto = palavra.dataset.word;
-
       palavra.textContent = "";
 
       [...texto].forEach((letra, indiceLetra) => {
@@ -357,6 +286,5 @@
       document.body.classList.add("page-loaded");
     });
   </script>
-
 </body>
 </html>
