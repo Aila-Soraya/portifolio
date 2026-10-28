@@ -1,10 +1,10 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#111212">
   <meta name="description" content="Portfólio audiovisual de Aíla Soraya, videomaker e filmmaker.">
 
   <title>Aíla Soraya | Videomaker &amp; Filmmaker</title>
@@ -14,6 +14,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./Css/Style.css">
+
+  <style>
+    /* PORTFÓLIO */
+    #portfolio .portfolio-heading {
+      display: block;
+      width: 100%;
+      margin: 0 auto 48px;
+      text-align: center !important;
+    }
+
+    #portfolio .portfolio-grid {
+      width: 100%;
+    }
+
+    /* PLAYER AMPLIADO */
+    .video-overlay {
+      display: none;
+    }
+
+    .video-overlay.is-open {
+      display: flex;
+    }
+
+    body.modal-aberto {
+      overflow: hidden;
+    }
+
+    #videoExpandido {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -86,19 +120,16 @@
     </section>
 
     <!-- PORTFÓLIO -->
-   
-<section id="portfolio" class="portfolio">
-  <div class="section-container">
+    <section id="portfolio" class="portfolio">
+      <div class="section-container">
 
-    <h2 class="section-title reveal-item">
-      Portfólio<span>.</span>
-    </h2>
+        <h2 class="section-title portfolio-heading reveal-item">
+          Portfólio<span>.</span>
+        </h2>
 
-    <div class="portfolio-grid">
-
+        <div class="portfolio-grid">
 
           <article class="project reveal-item">
-
             <button
               type="button"
               class="project-video"
@@ -106,10 +137,10 @@
               aria-label="Assistir ao demoreel em tamanho ampliado"
             >
 
-              <!-- MINIATURA: LOOPING SILENCIOSO -->
+              <!-- VÍDEO EM LOOPING SILENCIOSO -->
               <iframe
                 class="video-clicavel"
-                src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0&amp;vq=hd1080"
+                src="https://www.youtube.com/embed/lMs--LQYMFQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=lMs--LQYMFQ&amp;controls=0&amp;playsinline=1&amp;rel=0"
                 title="Demoreel de Aíla Soraya"
                 loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture"
@@ -124,7 +155,6 @@
               <span class="video-index">SHOWREEL / 2026</span>
 
             </button>
-
           </article>
 
         </div>
@@ -236,8 +266,7 @@
         "&controls=1" +
         "&playsinline=1" +
         "&rel=0" +
-        "&fs=1" +
-        "&vq=hd1080";
+        "&fs=1";
 
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
@@ -255,10 +284,7 @@
 
       overlay.classList.remove("is-open");
       overlay.setAttribute("aria-hidden", "true");
-
-      // Interrompe a reprodução ao fechar o player.
       videoModal.src = "";
-
       document.body.classList.remove("modal-aberto");
     }
 
@@ -300,7 +326,7 @@
       });
     }
 
-    /* NOME COM ENTRADA LETRA POR LETRA */
+    /* NOME ANIMADO LETRA POR LETRA */
     const palavrasNome =
       document.querySelectorAll(".name-word");
 
@@ -314,6 +340,7 @@
 
         span.className = "name-letter";
         span.textContent = letra;
+
         span.style.setProperty(
           "--letter-delay",
           `${0.35 + indicePalavra * 0.45 + indiceLetra * 0.075}s`
@@ -326,7 +353,6 @@
       palavra.classList.add("name-word-animated");
     });
 
-    /* MOSTRA AS LETRAS DEPOIS QUE A PÁGINA CARREGA */
     window.addEventListener("load", () => {
       document.body.classList.add("page-loaded");
     });
@@ -334,4 +360,3 @@
 
 </body>
 </html>
-```
