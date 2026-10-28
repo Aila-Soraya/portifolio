@@ -149,16 +149,24 @@ a:focus-visible {
 
 .about-background {
   position: absolute;
-  inset: 0;
+  inset: -8px;
   z-index: -1;
   pointer-events: none;
+  overflow: hidden;
   background:
-    radial-gradient(
-      ellipse at 80% 45%,
-      rgba(40, 127, 131, 0.13),
-      transparent 48%
+    linear-gradient(
+      90deg,
+      rgba(17, 18, 18, 0.58) 0%,
+      rgba(17, 18, 18, 0.40) 52%,
+      rgba(17, 18, 18, 0.48) 100%
     ),
-    var(--preto);
+    url("../Fotos/soraya-fundo.png");
+  background-position: center, center 35%;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  opacity: 0.9;
+  transform: scale(1.015);
 }
 
 .about-grid {
@@ -811,5 +819,82 @@ a:focus-visible {
 
   .hero-name {
     font-size: 70px;
+  }
+}
+
+
+/* AJUSTES FINAIS: compatibilidade com a estrutura atual do HTML */
+.about > .section-container {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* Título do portfólio centralizado e sem a etiqueta acima */
+#portfolio > .section-container > .section-label {
+  display: none;
+}
+
+#portfolio .section-title {
+  text-align: center;
+  width: 100%;
+}
+
+/* Mantém o título do Quem Sou compatível com o HTML atual */
+.about-text h1 {
+  margin: 0 0 20px;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(76px, 10vw, 140px);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  max-width: 560px;
+  margin-top: 25px;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 2;
+}
+
+@media (max-width: 850px) {
+  .about-text h1 {
+    font-size: clamp(65px, 10vw, 95px);
+  }
+}
+
+@media (max-width: 600px) {
+  .about > .section-container {
+    width: calc(100% - 36px);
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .about-text h1 {
+    font-size: clamp(76px, 18vw, 112px);
+  }
+
+  .about-text p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .about-image {
+    width: min(100%, 380px);
+    justify-self: center;
   }
 }
