@@ -23,8 +23,8 @@
   --agua-claro: #41999b;
 
   /* Fontes */
-  --fonte-titulo: "Aisling Logo", sans-serif;
-  --fonte-texto: 'Montserrat', sans-serif;
+  --fonte-titulo: 'Bebas Neue', Montserrat;
+  --fonte-texto: 'Montserrat', Bebas Neue;
 
   --transicao: 0.35s ease;
 }
